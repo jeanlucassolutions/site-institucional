@@ -1,7 +1,5 @@
 'use client'
 
-import { Footer as FooterComponent } from 'lucide-react'
-import Link from 'next/link'
 import { MessageCircle, Mail, Instagram, MapPin } from 'lucide-react'
 
 const Footer = () => {
