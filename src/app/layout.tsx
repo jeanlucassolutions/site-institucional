@@ -48,6 +48,10 @@ export const metadata: Metadata = {
 
   applicationName: 'Jean Lucas Eletricista',
 
+  verification: {
+    google: 'gSGIRVUyhd5aECoJeRSgGaqRhFlVOsnvKoln75jwA0w',
+  },
+
   robots: {
     index: true,
     follow: true,
