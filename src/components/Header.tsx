@@ -10,8 +10,8 @@ const Header = () => {
   const navItems = [
     { label: 'Início', href: '#inicio' },
     { label: 'Serviços', href: '#servicos' },
-    { label: 'Atendimento', href: '#atendimento' },
     { label: 'Sobre', href: '#sobre' },
+    { label: 'Atendimento', href: '#atendimento' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Contato', href: '#contato' },
   ]
