@@ -5,14 +5,32 @@ import WhatsAppButton from './WhatsAppButton'
 
 const ServiceArea = () => {
   const regions = [
-    'Jardim da Granja',
-    'Jardim Uirá',
-    'Putim',
-    'Residencial Flamboyant',
-    'Jardim São José',
-    'Jardim Santa Inês',
-    'DCTA',
-  ]
+  'Jardim da Granja',
+  'Jardim Uirá',
+  'Putim',
+  'Residencial Flamboyant',
+  'Jardim São José',
+  'Jardim Santa Inês',
+  'DCTA',
+  'Jardim Satélite',
+  'Bosque dos Eucaliptos',
+  'Parque Industrial',
+  'Jardim América',
+  'Floradas de São José',
+  'Jardim Oriente',
+  'Jardim Morumbi',
+  'Cidade Morumbi',
+  'Jardim Aquarius',
+  'Jardim das Indústrias',
+  'Jardim das Colinas',
+  'Urbanova',
+  'Vila Ema',
+  'Vila Adyana',
+  'Jardim Esplanada',
+  'Jardim Alvorada',
+  'Jardim Cassiano Ricardo',
+  'Centro',
+]
 
   return (
     <section
