@@ -1,6 +1,7 @@
 'use client'
 
-import { MessageCircle, ShieldCheck, Zap } from 'lucide-react'
+import Image from 'next/image'
+import { MessageCircle, ShieldCheck, Zap, MapPin } from 'lucide-react'
 
 const Hero = () => {
   const whatsappNumber =
@@ -15,33 +16,41 @@ const Hero = () => {
       id="inicio"
       className="relative overflow-hidden bg-navy-900 text-white"
     >
-      {/* Background */}
+      {/* Fundo */}
       <div className="absolute inset-0">
         <div className="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-electric-500/10 blur-3xl" />
         <div className="absolute -left-40 bottom-0 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl" />
       </div>
 
-      <div className="container relative mx-auto px-4 py-20 md:py-28 lg:py-32">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          
-          {/* Texto */}
-          <div className="max-w-2xl">
+      <div className="container relative mx-auto px-4 pt-28 pb-16 md:pt-32 md:pb-20 lg:pt-36 lg:pb-24">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+
+          {/* TEXTO */}
+          <div className="relative z-10 max-w-2xl">
+
+            {/* Badge */}
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-electric-500/30 bg-electric-500/10 px-4 py-2 text-sm font-medium text-electric-400">
               <Zap size={16} />
               Eletricista residencial em São José dos Campos
             </div>
 
+            {/* Título */}
             <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
               Instalações elétricas com{' '}
-              <span className="text-electric-500">segurança e confiança</span>
+              <span className="text-electric-500">
+                segurança e confiança
+              </span>
             </h1>
 
+            {/* Descrição */}
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300 md:text-xl">
               Serviços de elétrica residencial para instalações, reparos e
               manutenção em São José dos Campos e região.
             </p>
 
+            {/* Botões */}
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+
               <a
                 href={whatsappLink}
                 target="_blank"
@@ -58,96 +67,145 @@ const Hero = () => {
               >
                 Ver serviços
               </a>
+
             </div>
 
-            {/* Confiança */}
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {/* Indicadores de confiança */}
+            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
+
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-electric-500">
-                  <ShieldCheck size={21} />
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/10 text-electric-500">
+                  <ShieldCheck size={22} />
                 </div>
+
                 <div>
-                  <p className="font-semibold text-white">Atendimento profissional</p>
+                  <p className="font-semibold text-white">
+                    Atendimento profissional
+                  </p>
+
                   <p className="text-sm text-gray-400">
-                    Serviço residencial
+                    Serviço elétrico residencial
                   </p>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-electric-500">
-                  <Zap size={21} />
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/10 text-electric-500">
+                  <Zap size={22} />
                 </div>
+
                 <div>
-                  <p className="font-semibold text-white">Orçamento pelo WhatsApp</p>
+                  <p className="font-semibold text-white">
+                    Orçamento pelo WhatsApp
+                  </p>
+
                   <p className="text-sm text-gray-400">
                     Atendimento rápido
                   </p>
                 </div>
               </div>
+
             </div>
+
+            {/* Localização */}
+            <div className="mt-8 flex items-center gap-3 text-sm text-gray-400">
+              <MapPin
+                size={20}
+                className="shrink-0 text-electric-500"
+              />
+
+              <span>
+                Atendimento em São José dos Campos - SP
+              </span>
+            </div>
+
           </div>
 
-          {/* Destaque visual */}
-          <div className="relative hidden lg:block">
-            <div className="relative mx-auto max-w-lg">
-              <div className="absolute -inset-4 rounded-3xl bg-electric-500/10 blur-2xl" />
+          {/* IMAGEM */}
+          <div className="relative z-10">
 
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-sm">
-                <div className="mb-8 flex items-center justify-between">
+            {/* Brilho atrás da imagem */}
+            <div className="absolute -inset-4 rounded-3xl bg-electric-500/10 blur-3xl" />
+
+            <div className="relative h-[420px] overflow-hidden rounded-3xl border border-white/10 shadow-2xl md:h-[520px] lg:h-[580px]">
+
+              <Image
+                src="/images/hero-jean-lucas-eletricista.png"
+                alt="Eletricista residencial realizando manutenção em quadro elétrico"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                style={{
+                  objectPosition: '78% center',
+                }}
+              />
+
+              {/* Camada para integrar a imagem ao fundo */}
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/30 via-transparent to-transparent" />
+
+              {/* Selo */}
+              <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-navy-900/85 p-4 backdrop-blur-md">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-electric-500 text-navy-900">
+                    <ShieldCheck size={23} />
+                  </div>
+
                   <div>
-                    <p className="text-sm text-gray-400">Jean Lucas</p>
-                    <p className="text-xl font-bold text-white">
-                      Eletricista Residencial
+                    <p className="font-bold text-white">
+                      Segurança em primeiro lugar
                     </p>
-                  </div>
 
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-electric-500 text-2xl font-bold text-navy-900 shadow-lg">
-                    JL
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="rounded-2xl bg-white/10 p-5">
-                    <div className="flex items-center gap-3">
-                      <Zap className="text-electric-500" size={24} />
-                      <div>
-                        <p className="font-semibold text-white">
-                          Serviços elétricos
-                        </p>
-                        <p className="text-sm text-gray-400">
-                          Residenciais e manutenção
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="rounded-2xl bg-white/10 p-5">
-                    <div className="flex items-center gap-3">
-                      <ShieldCheck className="text-electric-500" size={24} />
-                      <div>
-                        <p className="font-semibold text-white">
-                          Segurança em primeiro lugar
-                        </p>
-                        <p className="text-sm text-gray-400">
-                          Soluções para sua residência
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="rounded-2xl bg-electric-500 p-5 text-center">
-                    <p className="font-bold text-navy-900">
-                      Atendimento em São José dos Campos
+                    <p className="text-sm text-gray-300">
+                      Soluções elétricas para sua residência
                     </p>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
 
         </div>
       </div>
+
+      {/* Faixa inferior */}
+      <div className="relative border-t border-white/10 bg-navy-950/60">
+        <div className="container mx-auto grid grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-3">
+
+          <div className="flex items-center justify-center gap-3 text-sm">
+            <ShieldCheck
+              size={20}
+              className="text-electric-500"
+            />
+            <span className="font-medium text-gray-200">
+              Atendimento profissional
+            </span>
+          </div>
+
+          <div className="flex items-center justify-center gap-3 text-sm">
+            <Zap
+              size={20}
+              className="text-electric-500"
+            />
+            <span className="font-medium text-gray-200">
+              Soluções elétricas residenciais
+            </span>
+          </div>
+
+          <div className="flex items-center justify-center gap-3 text-sm">
+            <MapPin
+              size={20}
+              className="text-electric-500"
+            />
+            <span className="font-medium text-gray-200">
+              São José dos Campos - SP
+            </span>
+          </div>
+
+        </div>
+      </div>
+
     </section>
   )
 }
