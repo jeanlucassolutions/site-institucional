@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Phone, MessageCircle } from 'lucide-react'
 import { useState } from 'react'
 
 const Header = () => {
@@ -38,7 +38,8 @@ const Header = () => {
           </a>
 
           {/* Menu Desktop */}
-          <nav className="hidden md:flex items-center gap-7">
+          <nav className="hidden md:flex items-center gap-5">
+
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -49,14 +50,26 @@ const Header = () => {
               </a>
             ))}
 
+            {/* Ligar agora */}
+            <a
+              href="tel:+5512982798846"
+              className="flex items-center gap-2 border-2 border-electric-500 text-electric-600 hover:bg-electric-500 hover:text-navy-900 font-semibold px-4 py-2.5 rounded-lg transition-all duration-300"
+            >
+              <Phone size={18} />
+              Ligar agora
+            </a>
+
+            {/* Orçamento */}
             <a
               href="https://wa.me/5512982798846"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 shadow-sm"
+              className="flex items-center gap-2 bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 shadow-sm"
             >
+              <MessageCircle size={18} />
               Orçamento
             </a>
+
           </nav>
 
           {/* Botão Mobile */}
@@ -69,12 +82,14 @@ const Header = () => {
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
+
         </div>
 
         {/* Menu Mobile */}
         {isOpen && (
           <nav className="md:hidden border-t border-gray-100 py-4">
             <div className="flex flex-col gap-1">
+
               {navItems.map((item) => (
                 <a
                   key={item.label}
@@ -86,18 +101,32 @@ const Header = () => {
                 </a>
               ))}
 
+              {/* Ligar agora - Mobile */}
+              <a
+                href="tel:+5512982798846"
+                onClick={() => setIsOpen(false)}
+                className="mt-2 flex items-center justify-center gap-2 border-2 border-electric-500 text-electric-600 hover:bg-electric-500 hover:text-navy-900 font-semibold px-5 py-3 rounded-lg transition-all"
+              >
+                <Phone size={20} />
+                Ligar agora
+              </a>
+
+              {/* Orçamento - Mobile */}
               <a
                 href="https://wa.me/5512982798846"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="mt-2 bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-5 py-3 rounded-lg text-center transition-all"
+                className="mt-2 flex items-center justify-center gap-2 bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-5 py-3 rounded-lg text-center transition-all"
               >
+                <MessageCircle size={20} />
                 Solicitar orçamento
               </a>
+
             </div>
           </nav>
         )}
+
       </div>
     </header>
   )
