@@ -1,8 +1,8 @@
 'use client'
 
-import { Menu, X, Zap } from 'lucide-react'
+import Image from 'next/image'
+import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
-import WhatsAppButton from './WhatsAppButton'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -10,42 +10,35 @@ const Header = () => {
   const navItems = [
     { label: 'Início', href: '#inicio' },
     { label: 'Serviços', href: '#servicos' },
-    { label: 'Problemas', href: '#problemas' },
-    { label: 'Diferenciais', href: '#diferenciais' },
     { label: 'Atendimento', href: '#atendimento' },
+    { label: 'Sobre', href: '#sobre' },
+    { label: 'FAQ', href: '#faq' },
+    { label: 'Contato', href: '#contato' },
   ]
 
-  const handleClick = () => {
-    setIsOpen(false)
-  }
-
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          
-          {/* Logo / Brand */}
+        <div className="flex items-center justify-between h-20">
+
+          {/* Logo */}
           <a
             href="#inicio"
-            className="flex items-center gap-3"
-            onClick={handleClick}
+            className="flex items-center"
+            onClick={() => setIsOpen(false)}
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-electric-500 to-electric-600 rounded-lg flex items-center justify-center">
-              <Zap size={22} className="text-navy-900" />
-            </div>
-
-            <div className="leading-tight">
-              <span className="block font-bold text-navy-900">
-                Jean Lucas
-              </span>
-              <span className="block text-xs font-medium text-gray-500">
-                Eletricista Residencial
-              </span>
-            </div>
+            <Image
+              src="/images/logo-jean-lucas-eletricista.png"
+              alt="Jean Lucas Eletricista Residencial"
+              width={180}
+              height={60}
+              priority
+              className="h-14 w-auto object-contain"
+            />
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          {/* Menu Desktop */}
+          <nav className="hidden md:flex items-center gap-7">
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -55,48 +48,55 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
+
+            <a
+              href="https://wa.me/5512982798846"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 shadow-sm"
+            >
+              Orçamento
+            </a>
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <WhatsAppButton text="Orçamento" />
-          </div>
-
-          {/* Mobile Menu Button */}
+          {/* Botão Mobile */}
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-navy-900 hover:text-electric-600 transition-colors"
+            className="md:hidden p-2 text-gray-700 hover:text-electric-600 transition-colors"
             aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={isOpen}
           >
-            {isOpen ? <X size={26} /> : <Menu size={26} />}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Menu Mobile */}
         {isOpen && (
-          <div className="lg:hidden border-t border-gray-200 py-4">
-            <nav className="flex flex-col gap-1">
+          <nav className="md:hidden border-t border-gray-100 py-4">
+            <div className="flex flex-col gap-1">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  onClick={handleClick}
-                  className="px-3 py-3 text-sm font-medium text-gray-700 hover:text-electric-600 hover:bg-gray-50 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                  className="px-3 py-3 text-gray-700 hover:text-electric-600 hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   {item.label}
                 </a>
               ))}
 
-              <div className="pt-3 px-3">
-                <WhatsAppButton
-                  variant="cta"
-                  text="Solicitar orçamento"
-                />
-              </div>
-            </nav>
-          </div>
+              <a
+                href="https://wa.me/5512982798846"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="mt-2 bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-5 py-3 rounded-lg text-center transition-all"
+              >
+                Solicitar orçamento
+              </a>
+            </div>
+          </nav>
         )}
       </div>
     </header>
