@@ -1,7 +1,14 @@
 'use client'
 
 import Image from 'next/image'
-import { Zap, Lightbulb, Wind, Wrench, ShieldAlert, Box } from 'lucide-react'
+import {
+  Zap,
+  Lightbulb,
+  Wind,
+  Wrench,
+  ShieldAlert,
+  Box,
+} from 'lucide-react'
 import WhatsAppButton from './WhatsAppButton'
 
 const Services = () => {
@@ -11,56 +18,56 @@ const Services = () => {
       icon: Zap,
       title: 'Instalação de Tomadas e Interruptores',
       description:
-        'Instalação profissional de tomadas, interruptores e pontos de luz com segurança.',
+        'Instalação e substituição de tomadas, interruptores e pontos de energia para residências em São José dos Campos.',
     },
     {
       image: '/images/servico-chuveiro.png',
       icon: Lightbulb,
-      title: 'Chuveiros Elétricos',
+      title: 'Instalação de Chuveiro Elétrico',
       description:
-        'Instalação e manutenção de chuveiros elétricos residenciais.',
+        'Instalação e manutenção de chuveiros elétricos, com atenção às condições do circuito e à segurança da instalação.',
     },
     {
       image: '/images/servico-iluminacao.png',
       icon: Lightbulb,
       title: 'Luminárias e Iluminação',
       description:
-        'Instalação de luminárias, arandelas e sistemas de iluminação residencial.',
+        'Instalação de luminárias, arandelas, plafons e pontos de iluminação para ambientes residenciais.',
     },
     {
       image: '/images/servico-ventilar.png',
       icon: Wind,
-      title: 'Ventiladores de Teto',
+      title: 'Instalação de Ventilador de Teto',
       description:
-        'Instalação e manutenção de ventiladores de teto.',
+        'Instalação e manutenção de ventiladores de teto, incluindo conexão elétrica e avaliação do ponto de instalação.',
     },
     {
       image: '/images/servico-disjuntor.png',
       icon: ShieldAlert,
-      title: 'Disjuntores',
+      title: 'Instalação e Troca de Disjuntores',
       description:
-        'Instalação e substituição de disjuntores com segurança.',
+        'Instalação e substituição de disjuntores residenciais, de acordo com as características do circuito elétrico.',
     },
     {
       image: '/images/servico-quadro-eletrico.png',
       icon: Box,
       title: 'Quadros Elétricos',
       description:
-        'Instalação, manutenção e reparos em quadros elétricos residenciais.',
+        'Instalação, manutenção e reparos em quadros elétricos residenciais, incluindo avaliação de disjuntores e circuitos.',
     },
     {
       image: '/images/servico-fiacao.png',
       icon: Zap,
       title: 'Fiação e Instalações Elétricas',
       description:
-        'Instalação e distribuição de fiação elétrica conforme normas de segurança.',
+        'Serviços de fiação, distribuição de circuitos e instalações elétricas residenciais conforme a necessidade do imóvel.',
     },
     {
       image: '/images/servico-manutencao.png',
       icon: Wrench,
-      title: 'Manutenção e Reparos',
+      title: 'Manutenção e Reparos Elétricos',
       description:
-        'Manutenção preventiva e reparos em instalações elétricas residenciais.',
+        'Identificação e reparo de problemas elétricos residenciais, como falhas, mau contato e circuitos com funcionamento irregular.',
     },
   ]
 
@@ -75,7 +82,8 @@ const Services = () => {
           </h2>
 
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Soluções elétricas para instalações, manutenções e reparos em sua residência.
+            Serviços de eletricista residencial em São José dos Campos para
+            instalações, manutenção, reparos e adequações elétricas.
           </p>
         </div>
 
@@ -94,7 +102,7 @@ const Services = () => {
                 <div className="relative h-44 w-full overflow-hidden">
                   <Image
                     src={service.image}
-                    alt={`${service.title} - Jean Lucas Eletricista`}
+                    alt={`${service.title} em São José dos Campos - Jean Lucas Eletricista`}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -132,10 +140,13 @@ const Services = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <WhatsAppButton variant="cta" />
+          <WhatsAppButton
+            variant="cta"
+            text="Solicitar orçamento"
+          />
 
           <p className="text-sm text-gray-500 mt-4">
-            Preciso de um eletricista
+            Precisa de um eletricista residencial?
           </p>
         </div>
 
