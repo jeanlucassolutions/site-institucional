@@ -144,23 +144,27 @@ const Hero = () => {
               {/* Camada para integrar a imagem ao fundo */}
               <div className="absolute inset-0 bg-gradient-to-r from-navy-900/30 via-transparent to-transparent" />
 
-              {/* Selo */}
-              <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-navy-900/85 p-4 backdrop-blur-md">
+              {/* Selo reposicionado */}
+              <div className="absolute bottom-5 left-5 w-fit max-w-[280px] rounded-xl border border-white/10 bg-navy-900/85 p-3 backdrop-blur-md shadow-lg">
+
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-electric-500 text-navy-900">
-                    <ShieldCheck size={23} />
+
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-electric-500 text-navy-900">
+                    <ShieldCheck size={21} />
                   </div>
 
                   <div>
-                    <p className="font-bold text-white">
+                    <p className="text-sm font-bold text-white">
                       Segurança em primeiro lugar
                     </p>
 
-                    <p className="text-sm text-gray-300">
-                      Soluções elétricas para sua residência
+                    <p className="mt-0.5 text-xs text-gray-300">
+                      Serviço elétrico residencial
                     </p>
                   </div>
+
                 </div>
+
               </div>
 
             </div>
