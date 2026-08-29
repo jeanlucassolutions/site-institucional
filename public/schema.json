@@ -1,0 +1,110 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Jean Lucas Eletricista",
+  "image": "https://jeanlucaseletricista.com.br/logo.png",
+  "description": "Serviços de elétrica residencial com atendimento rápido, orçamento e garantia em São José dos Campos",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "São José dos Campos",
+    "addressRegion": "SP",
+    "addressCountry": "BR"
+  },
+  "telephone": "+5512982798846",
+  "email": "jeanlucas.solutions@gmail.com",
+  "url": "https://jeanlucaseletricista.com.br",
+  "priceRange": "$$",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "São José dos Campos"
+    },
+    {
+      "@type": "Neighborhood",
+      "name": "Jardim da Granja"
+    },
+    {
+      "@type": "Neighborhood",
+      "name": "Jardim Uirá"
+    },
+    {
+      "@type": "Neighborhood",
+      "name": "Putim"
+    },
+    {
+      "@type": "Neighborhood",
+      "name": "Residencial Flamboyant"
+    },
+    {
+      "@type": "Neighborhood",
+      "name": "Jardim São José"
+    },
+    {
+      "@type": "Neighborhood",
+      "name": "Jardim Santa Inês"
+    },
+    {
+      "@type": "Neighborhood",
+      "name": "DCTA"
+    }
+  ],
+  "serviceArea": {
+    "@type": "City",
+    "name": "São José dos Campos",
+    "addressCountry": "BR"
+  },
+  "sameAs": [
+    "https://www.instagram.com/jeanlucas_eletricista/",
+    "https://share.google/slNMDMZYIq0BFv93d"
+  ],
+  "knowsAbout": [
+    "Elétrica Residencial",
+    "Instalação de Tomadas",
+    "Instalação de Interruptores",
+    "Chuveiro Elétrico",
+    "Luminárias",
+    "Ventiladores de Teto",
+    "Disjuntores",
+    "Quadros Elétricos",
+    "Fiação Elétrica",
+    "Manutenção Elétrica"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Elétrica Residencial",
+    "itemListElement": [
+      {
+        "@type": "Service",
+        "name": "Instalação de Tomadas e Interruptores"
+      },
+      {
+        "@type": "Service",
+        "name": "Chuveiros Elétricos"
+      },
+      {
+        "@type": "Service",
+        "name": "Luminárias e Iluminação"
+      },
+      {
+        "@type": "Service",
+        "name": "Ventiladores de Teto"
+      },
+      {
+        "@type": "Service",
+        "name": "Disjuntores"
+      },
+      {
+        "@type": "Service",
+        "name": "Quadros Elétricos"
+      },
+      {
+        "@type": "Service",
+        "name": "Fiação e Instalações Elétricas"
+      },
+      {
+        "@type": "Service",
+        "name": "Manutenção e Reparos"
+      }
+    ]
+  }
+}
