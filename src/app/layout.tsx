@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 
 const siteUrl = 'https://jean-lucas-eletricista.vercel.app'
@@ -432,6 +433,21 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+
+        {/* Google Ads */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18473251308"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18473251308');
+          `}
+        </Script>
 
         {/* Verificação do Google Search Console */}
         <meta
