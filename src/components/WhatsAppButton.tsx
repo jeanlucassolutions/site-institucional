@@ -1,6 +1,8 @@
+
 'use client'
 
 import { MessageCircle } from 'lucide-react'
+import { trackWhatsAppClick } from '../lib/googleAds'
 
 interface WhatsAppButtonProps {
   variant?: 'default' | 'cta'
@@ -19,7 +21,6 @@ const WhatsAppButton = ({
   )
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`
-
   const isCTA = variant === 'cta'
 
   return (
@@ -27,11 +28,12 @@ const WhatsAppButton = ({
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={trackWhatsAppClick}
       aria-label="Solicitar orçamento pelo WhatsApp"
       className={
         isCTA
-          ? 'inline-flex items-center justify-center gap-2 px-6 py-3 bg-electric-500 text-navy-900 font-bold rounded-lg hover:bg-electric-400 transition-all duration-300 hover:scale-105 shadow-lg-light'
-          : 'inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-electric-500 text-navy-900 font-semibold rounded-lg hover:bg-electric-400 transition-all duration-300'
+          ? 'inline-flex items-center justify-center gap-2 bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-sm'
+          : 'inline-flex items-center justify-center gap-2 bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 shadow-sm'
       }
     >
       <MessageCircle size={20} />
