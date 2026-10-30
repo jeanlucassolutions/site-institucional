@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { MessageCircle, Mail, Instagram, MapPin } from 'lucide-react'
+import { trackWhatsAppClick } from '../lib/googleAds'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -82,12 +83,12 @@ const Footer = () => {
             </h3>
 
             <ul className="space-y-3 text-sm">
-
               <li>
                 <a
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={trackWhatsAppClick}
                   className="text-gray-400 hover:text-electric-500 transition-colors duration-300 flex items-center gap-2"
                 >
                   <MessageCircle size={16} />
@@ -128,7 +129,6 @@ const Footer = () => {
                   Google Maps
                 </a>
               </li>
-
             </ul>
           </div>
 
@@ -143,12 +143,10 @@ const Footer = () => {
             </p>
 
             <div className="text-xs text-gray-500">
-              <p>Atendimento em:</p>
+              <p>Área de atendimento:</p>
 
               <p className="text-electric-500 font-semibold mt-2">
-                Jardim da Granja, Jardim Uirá, Putim,
-                Residencial Flamboyant, Jardim São José,
-                Jardim Santa Inês, DCTA
+                Toda São José dos Campos - SP
               </p>
             </div>
           </div>
