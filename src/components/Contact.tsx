@@ -1,4 +1,3 @@
-
 'use client'
 
 import {
@@ -9,10 +8,14 @@ import {
   Phone,
 } from 'lucide-react'
 import WhatsAppButton from './WhatsAppButton'
-import { trackPhoneClick } from '../lib/googleAds'
+import {
+  trackPhoneClick,
+  trackWhatsAppClick,
+} from '../lib/googleAds'
 
 const Contact = () => {
   const whatsappNumber = '5512982798846'
+
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     'Olá! Gostaria de solicitar um orçamento para serviços elétricos residenciais.'
   )}`
@@ -51,10 +54,7 @@ const Contact = () => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => {
-                // O rastreamento é feito pelo link WhatsApp desta seção.
-                // Não chamar trackWhatsAppClick aqui para evitar duplicidade.
-              }}
+              onClick={trackWhatsAppClick}
               className="group bg-white border-2 border-electric-500 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
