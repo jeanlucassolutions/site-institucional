@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { MessageCircle, ShieldCheck, Zap, MapPin } from 'lucide-react'
+import { trackWhatsAppClick } from '../lib/googleAds'
 
 const Hero = () => {
   const whatsappNumber =
@@ -45,7 +46,7 @@ const Hero = () => {
             {/* Descrição */}
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300 md:text-xl">
               Serviços de elétrica residencial para instalações, reparos e
-              manutenção em São José dos Campos e região.
+              manutenção em toda São José dos Campos - SP.
             </p>
 
             {/* Botões */}
@@ -55,6 +56,7 @@ const Hero = () => {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackWhatsAppClick}
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-500 px-6 py-4 font-bold text-navy-900 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-electric-400"
               >
                 <MessageCircle size={20} />
@@ -115,7 +117,7 @@ const Hero = () => {
               />
 
               <span>
-                Atendimento em São José dos Campos - SP
+                Atendimento em toda São José dos Campos - SP
               </span>
             </div>
 
@@ -144,7 +146,7 @@ const Hero = () => {
               {/* Camada para integrar a imagem ao fundo */}
               <div className="absolute inset-0 bg-gradient-to-r from-navy-900/30 via-transparent to-transparent" />
 
-              {/* Selo reposicionado */}
+              {/* Selo */}
               <div className="absolute bottom-5 left-5 w-fit max-w-[280px] rounded-xl border border-white/10 bg-navy-900/85 p-3 backdrop-blur-md shadow-lg">
 
                 <div className="flex items-center gap-3">
