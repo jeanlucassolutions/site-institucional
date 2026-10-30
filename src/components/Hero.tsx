@@ -1,219 +1,174 @@
 'use client'
 
-import Image from 'next/image'
-import { MessageCircle, ShieldCheck, Zap, MapPin } from 'lucide-react'
-import { trackWhatsAppClick } from '../lib/googleAds'
+import {
+  Instagram,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+} from 'lucide-react'
+import WhatsAppButton from './WhatsAppButton'
+import {
+  trackPhoneClick,
+  trackWhatsAppClick,
+} from '../lib/googleAds'
 
-const Hero = () => {
-  const whatsappNumber =
-    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5512982798846'
+const Contact = () => {
+  const whatsappNumber = '5512982798846'
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    'Olá, Jean Lucas! Gostaria de solicitar um orçamento de serviço elétrico.'
+    'Olá! Gostaria de solicitar um orçamento para serviços elétricos residenciais.'
   )}`
 
+  const handlePhoneClick = (
+    event: React.MouseEvent<HTMLAnchorElement>
+  ) => {
+    event.preventDefault()
+    trackPhoneClick(event.currentTarget.href)
+  }
+
   return (
-    <section
-      id="inicio"
-      className="relative overflow-hidden bg-navy-900 text-white"
-    >
-      {/* Fundo */}
-      <div className="absolute inset-0">
-        <div className="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-electric-500/10 blur-3xl" />
-        <div className="absolute -left-40 bottom-0 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl" />
-      </div>
+    <section id="contato" className="py-16 md:py-24 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="max-w-5xl mx-auto">
 
-      <div className="container relative mx-auto px-4 pt-28 pb-16 md:pt-32 md:pb-20 lg:pt-36 lg:pb-24">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 text-sm font-semibold text-electric-600 mb-4">
+              <MessageCircle size={18} />
+              Entre em contato
+            </span>
 
-          {/* TEXTO */}
-          <div className="relative z-10 max-w-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">
+              Solicite seu orçamento
+            </h2>
 
-            {/* Badge */}
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-electric-500/30 bg-electric-500/10 px-4 py-2 text-sm font-medium text-electric-400">
-              <Zap size={16} />
-              Eletricista residencial em São José dos Campos
-            </div>
-
-            {/* Título */}
-            <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-              Instalações elétricas com{' '}
-              <span className="text-electric-500">
-                segurança e confiança
-              </span>
-            </h1>
-
-            {/* Descrição */}
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300 md:text-xl">
-              Serviços de elétrica residencial para instalações, reparos e
-              manutenção em toda São José dos Campos - SP.
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Precisa de um eletricista? Escolha a melhor forma de entrar em contato.
             </p>
+          </div>
 
-            {/* Botões */}
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+          <div className="grid md:grid-cols-2 gap-6">
 
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={trackWhatsAppClick}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-500 px-6 py-4 font-bold text-navy-900 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-electric-400"
-              >
-                <MessageCircle size={20} />
-                Solicitar orçamento
-              </a>
-
-              <a
-                href="#servicos"
-                className="inline-flex items-center justify-center rounded-xl border border-white/20 px-6 py-4 font-semibold text-white transition-all duration-300 hover:border-electric-500 hover:text-electric-500"
-              >
-                Ver serviços
-              </a>
-
-            </div>
-
-            {/* Indicadores de confiança */}
-            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/10 text-electric-500">
-                  <ShieldCheck size={22} />
-                </div>
-
-                <div>
-                  <p className="font-semibold text-white">
-                    Atendimento profissional
-                  </p>
-
-                  <p className="text-sm text-gray-400">
-                    Serviço elétrico residencial
-                  </p>
-                </div>
+            {/* WhatsApp */}
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackWhatsAppClick}
+              className="group bg-white border-2 border-electric-500 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
+                <MessageCircle size={24} className="text-electric-600 group-hover:text-white" />
               </div>
 
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white/10 text-electric-500">
-                  <Zap size={22} />
-                </div>
+              <h3 className="text-lg font-bold text-navy-800 mb-2">
+                WhatsApp
+              </h3>
 
-                <div>
-                  <p className="font-semibold text-white">
-                    Orçamento pelo WhatsApp
-                  </p>
+              <p className="text-gray-600 text-sm mb-3">
+                Envie uma mensagem e solicite seu orçamento.
+              </p>
 
-                  <p className="text-sm text-gray-400">
-                    Atendimento rápido
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Localização */}
-            <div className="mt-8 flex items-center gap-3 text-sm text-gray-400">
-              <MapPin
-                size={20}
-                className="shrink-0 text-electric-500"
-              />
-
-              <span>
-                Atendimento em toda São José dos Campos - SP
+              <span className="text-electric-600 font-semibold text-sm">
+                Conversar pelo WhatsApp →
               </span>
-            </div>
+            </a>
 
-          </div>
-
-          {/* IMAGEM */}
-          <div className="relative z-10">
-
-            {/* Brilho atrás da imagem */}
-            <div className="absolute -inset-4 rounded-3xl bg-electric-500/10 blur-3xl" />
-
-            <div className="relative h-[420px] overflow-hidden rounded-3xl border border-white/10 shadow-2xl md:h-[520px] lg:h-[580px]">
-
-              <Image
-                src="/images/hero-jean-lucas-eletricista.png"
-                alt="Eletricista residencial realizando manutenção em quadro elétrico"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-                style={{
-                  objectPosition: '78% center',
-                }}
-              />
-
-              {/* Camada para integrar a imagem ao fundo */}
-              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/30 via-transparent to-transparent" />
-
-              {/* Selo */}
-              <div className="absolute bottom-5 left-5 w-fit max-w-[280px] rounded-xl border border-white/10 bg-navy-900/85 p-3 backdrop-blur-md shadow-lg">
-
-                <div className="flex items-center gap-3">
-
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-electric-500 text-navy-900">
-                    <ShieldCheck size={21} />
-                  </div>
-
-                  <div>
-                    <p className="text-sm font-bold text-white">
-                      Segurança em primeiro lugar
-                    </p>
-
-                    <p className="mt-0.5 text-xs text-gray-300">
-                      Serviço elétrico residencial
-                    </p>
-                  </div>
-
-                </div>
-
+            {/* Telefone */}
+            <a
+              href="tel:+5512982798846"
+              onClick={handlePhoneClick}
+              className="group bg-white border-2 border-electric-500 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
+                <Phone size={24} className="text-electric-600 group-hover:text-white" />
               </div>
 
-            </div>
+              <h3 className="text-lg font-bold text-navy-800 mb-2">
+                Ligação telefônica
+              </h3>
+
+              <p className="text-gray-600 text-sm mb-3">
+                Ligue diretamente para conversar sobre o serviço.
+              </p>
+
+              <span className="text-electric-600 font-semibold text-sm">
+                (12) 98279-8846 →
+              </span>
+            </a>
+
+            {/* E-mail */}
+            <a
+              href="mailto:jeanlucas.solutions@gmail.com"
+              className="group bg-white border border-gray-200 rounded-xl p-6 hover:border-electric-500 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
+                <Mail size={24} className="text-electric-600 group-hover:text-white" />
+              </div>
+
+              <h3 className="text-lg font-bold text-navy-800 mb-2">
+                E-mail
+              </h3>
+
+              <p className="text-gray-600 text-sm mb-3">
+                Envie sua solicitação por e-mail.
+              </p>
+
+              <span className="text-electric-600 font-semibold text-sm break-all">
+                jeanlucas.solutions@gmail.com
+              </span>
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/jeanlucas_eletricista/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white border border-gray-200 rounded-xl p-6 hover:border-electric-500 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
+                <Instagram size={24} className="text-electric-600 group-hover:text-white" />
+              </div>
+
+              <h3 className="text-lg font-bold text-navy-800 mb-2">
+                Instagram
+              </h3>
+
+              <p className="text-gray-600 text-sm mb-3">
+                Acompanhe nossos serviços e conteúdos.
+              </p>
+
+              <span className="text-electric-600 font-semibold text-sm">
+                @jeanlucas_eletricista →
+              </span>
+            </a>
+
+          </div>
+
+          {/* Localização */}
+          <div className="mt-8 bg-white border border-gray-200 rounded-xl p-6 text-center">
+            <MapPin size={26} className="text-electric-600 mx-auto mb-3" />
+
+            <h3 className="text-lg font-bold text-navy-800 mb-2">
+              Atendimento em São José dos Campos - SP
+            </h3>
+
+            <p className="text-gray-600 text-sm">
+              Serviços elétricos residenciais em toda a cidade.
+            </p>
+          </div>
+
+          <div className="text-center mt-10">
+            <WhatsAppButton
+              variant="cta"
+              text="Falar com Jean Lucas pelo WhatsApp"
+            />
           </div>
 
         </div>
       </div>
-
-      {/* Faixa inferior */}
-      <div className="relative border-t border-white/10 bg-navy-950/60">
-        <div className="container mx-auto grid grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-3">
-
-          <div className="flex items-center justify-center gap-3 text-sm">
-            <ShieldCheck
-              size={20}
-              className="text-electric-500"
-            />
-            <span className="font-medium text-gray-200">
-              Atendimento profissional
-            </span>
-          </div>
-
-          <div className="flex items-center justify-center gap-3 text-sm">
-            <Zap
-              size={20}
-              className="text-electric-500"
-            />
-            <span className="font-medium text-gray-200">
-              Soluções elétricas residenciais
-            </span>
-          </div>
-
-          <div className="flex items-center justify-center gap-3 text-sm">
-            <MapPin
-              size={20}
-              className="text-electric-500"
-            />
-            <span className="font-medium text-gray-200">
-              São José dos Campos - SP
-            </span>
-          </div>
-
-        </div>
-      </div>
-
     </section>
   )
 }
 
-export default Hero
+export default Contact
