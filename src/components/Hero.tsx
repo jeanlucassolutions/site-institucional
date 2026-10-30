@@ -1,3 +1,4 @@
+
 'use client'
 
 import Image from 'next/image'
@@ -7,6 +8,7 @@ import {
   Zap,
   MapPin,
   Phone,
+  AlertCircle,
 } from 'lucide-react'
 import { type MouseEvent } from 'react'
 import {
@@ -75,20 +77,26 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={trackWhatsAppClick}
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-electric-500 px-6 py-4 font-bold text-navy-900 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-electric-400"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-green-500"
               >
                 <MessageCircle size={20} />
                 Chamar no WhatsApp
               </a>
 
-              {/* Telefone */}
+              {/* Telefone - Emergência */}
               <a
                 href="tel:+5512982798846"
                 onClick={handlePhoneClick}
-                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/30 px-6 py-4 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:border-electric-500 hover:bg-white/10"
+                className="inline-flex flex-col items-center justify-center gap-1 rounded-xl border-2 border-red-500 bg-red-600 px-6 py-3 font-bold text-white shadow-lg shadow-red-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-red-700 sm:min-w-[220px]"
               >
-                <Phone size={20} />
-                Ligar agora
+                <span className="flex items-center gap-2">
+                  <Phone size={20} />
+                  Ligar agora
+                </span>
+                <span className="flex items-center gap-1 text-xs font-semibold text-red-100">
+                  <AlertCircle size={13} />
+                  Emergência elétrica?
+                </span>
               </a>
 
             </div>
