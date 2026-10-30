@@ -9,12 +9,20 @@ import {
   Phone,
 } from 'lucide-react'
 import WhatsAppButton from './WhatsAppButton'
+import { trackPhoneClick } from '../lib/googleAds'
 
 const Contact = () => {
   const whatsappNumber = '5512982798846'
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     'Olá! Gostaria de solicitar um orçamento para serviços elétricos residenciais.'
   )}`
+
+  const handlePhoneClick = (
+    event: React.MouseEvent<HTMLAnchorElement>
+  ) => {
+    event.preventDefault()
+    trackPhoneClick(event.currentTarget.href)
+  }
 
   return (
     <section id="contato" className="py-16 md:py-24 bg-gray-50">
@@ -43,6 +51,10 @@ const Contact = () => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                // O rastreamento é feito pelo link WhatsApp desta seção.
+                // Não chamar trackWhatsAppClick aqui para evitar duplicidade.
+              }}
               className="group bg-white border-2 border-electric-500 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
@@ -65,6 +77,7 @@ const Contact = () => {
             {/* Telefone */}
             <a
               href="tel:+5512982798846"
+              onClick={handlePhoneClick}
               className="group bg-white border-2 border-electric-500 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
