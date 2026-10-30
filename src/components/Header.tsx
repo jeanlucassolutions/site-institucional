@@ -1,10 +1,12 @@
-
 'use client'
 
 import Image from 'next/image'
 import { Menu, X, Phone, MessageCircle } from 'lucide-react'
-import { useState } from 'react'
-import { trackPhoneClick } from '../lib/googleAds'
+import { useState, type MouseEvent } from 'react'
+import {
+  trackPhoneClick,
+  trackWhatsAppClick,
+} from '../lib/googleAds'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,10 +22,15 @@ const Header = () => {
   const closeMenu = () => setIsOpen(false)
 
   const handlePhoneClick = (
-    event: React.MouseEvent<HTMLAnchorElement>
+    event: MouseEvent<HTMLAnchorElement>
   ) => {
     event.preventDefault()
     trackPhoneClick(event.currentTarget.href)
+  }
+
+  const handleWhatsAppClick = () => {
+    trackWhatsAppClick()
+    closeMenu()
   }
 
   return (
@@ -74,6 +81,7 @@ const Header = () => {
               href="https://wa.me/5512982798846"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleWhatsAppClick}
               className="flex items-center gap-2 bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 shadow-sm"
             >
               <MessageCircle size={18} />
@@ -127,7 +135,7 @@ const Header = () => {
                 href="https://wa.me/5512982798846"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={closeMenu}
+                onClick={handleWhatsAppClick}
                 className="mt-2 flex items-center justify-center gap-2 bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-5 py-3 rounded-lg text-center transition-all"
               >
                 <MessageCircle size={20} />
