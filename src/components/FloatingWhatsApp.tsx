@@ -1,49 +1,27 @@
+
 'use client'
 
 import { MessageCircle } from 'lucide-react'
-import { useState, useEffect } from 'react'
-
-declare global {
-  interface Window {
-    gtag?: (...args: any[]) => void
-  }
-}
+import { trackWhatsAppClick } from '../lib/googleAds'
 
 const FloatingWhatsApp = () => {
-  const [isVisible, setIsVisible] = useState(false)
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5512982798846'
-  const message = encodeURIComponent('Olá! Gostaria de solicitar um orçamento para serviços elétricos residenciais.')
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`
+  const whatsappNumber =
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5512982798846'
 
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 2000)
-    return () => clearTimeout(timer)
-  }, [])
-
-  if (!isVisible) return null
+  const message = encodeURIComponent(
+    'Olá! Gostaria de solicitar um orçamento para serviços elétricos residenciais.'
+  )
 
   return (
     <a
-      href={whatsappLink}
+      href={`https://wa.me/${whatsappNumber}?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 animate-fade-in"
-      aria-label="Falar no WhatsApp"
-      onClick={() => {
-        if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-          window.gtag('event', 'conversion', {
-            send_to: 'AW-18473251308/a7zNCNC13IUdEOzj3ehE',
-          })
-        }
-      }}
+      onClick={trackWhatsAppClick}
+      aria-label="Falar pelo WhatsApp"
+      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-all duration-300"
     >
-      <div className="relative">
-        <div className="absolute inset-0 bg-electric-500 rounded-full animate-pulse opacity-75"></div>
-
-        <div className="relative w-14 h-14 bg-electric-500 text-white rounded-full flex items-center justify-center shadow-lg-light hover:bg-electric-600 transition-all duration-300 hover:shadow-xl-light hover:scale-110">
-          <MessageCircle size={24} />
-        </div>
-      </div>
+      <MessageCircle size={28} />
     </a>
   )
 }
