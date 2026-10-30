@@ -1,6 +1,13 @@
+
 'use client'
 
-import { Instagram, Mail, MapPin, MessageCircle } from 'lucide-react'
+import {
+  Instagram,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+} from 'lucide-react'
 import WhatsAppButton from './WhatsAppButton'
 
 const Contact = () => {
@@ -14,7 +21,6 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
 
-          {/* Header */}
           <div className="text-center mb-12">
             <span className="inline-flex items-center gap-2 text-sm font-semibold text-electric-600 mb-4">
               <MessageCircle size={18} />
@@ -26,7 +32,7 @@ const Contact = () => {
             </h2>
 
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Entre em contato e explique o serviço elétrico que você precisa.
+              Precisa de um eletricista? Escolha a melhor forma de entrar em contato.
             </p>
           </div>
 
@@ -37,13 +43,10 @@ const Contact = () => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white border border-gray-200 rounded-xl p-6 hover:border-electric-500 hover:shadow-lg transition-all duration-300"
+              className="group bg-white border-2 border-electric-500 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
-                <MessageCircle
-                  size={24}
-                  className="text-electric-600 group-hover:text-white"
-                />
+                <MessageCircle size={24} className="text-electric-600 group-hover:text-white" />
               </div>
 
               <h3 className="text-lg font-bold text-navy-800 mb-2">
@@ -51,11 +54,33 @@ const Contact = () => {
               </h3>
 
               <p className="text-gray-600 text-sm mb-3">
-                Fale diretamente para solicitar um orçamento.
+                Envie uma mensagem e solicite seu orçamento.
               </p>
 
               <span className="text-electric-600 font-semibold text-sm">
-                Solicitar orçamento →
+                Conversar pelo WhatsApp →
+              </span>
+            </a>
+
+            {/* Telefone */}
+            <a
+              href="tel:+5512982798846"
+              className="group bg-white border-2 border-electric-500 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
+                <Phone size={24} className="text-electric-600 group-hover:text-white" />
+              </div>
+
+              <h3 className="text-lg font-bold text-navy-800 mb-2">
+                Ligação telefônica
+              </h3>
+
+              <p className="text-gray-600 text-sm mb-3">
+                Ligue diretamente para conversar sobre o serviço.
+              </p>
+
+              <span className="text-electric-600 font-semibold text-sm">
+                (12) 98279-8846 →
               </span>
             </a>
 
@@ -65,10 +90,7 @@ const Contact = () => {
               className="group bg-white border border-gray-200 rounded-xl p-6 hover:border-electric-500 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
-                <Mail
-                  size={24}
-                  className="text-electric-600 group-hover:text-white"
-                />
+                <Mail size={24} className="text-electric-600 group-hover:text-white" />
               </div>
 
               <h3 className="text-lg font-bold text-navy-800 mb-2">
@@ -92,10 +114,7 @@ const Contact = () => {
               className="group bg-white border border-gray-200 rounded-xl p-6 hover:border-electric-500 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
-                <Instagram
-                  size={24}
-                  className="text-electric-600 group-hover:text-white"
-                />
+                <Instagram size={24} className="text-electric-600 group-hover:text-white" />
               </div>
 
               <h3 className="text-lg font-bold text-navy-800 mb-2">
@@ -111,29 +130,21 @@ const Contact = () => {
               </span>
             </a>
 
-            {/* Localização */}
-            <div className="bg-white border border-gray-200 rounded-xl p-6">
-              <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4">
-                <MapPin
-                  size={24}
-                  className="text-electric-600"
-                />
-              </div>
-
-              <h3 className="text-lg font-bold text-navy-800 mb-2">
-                Área de atendimento
-              </h3>
-
-              <p className="text-gray-600 text-sm leading-relaxed">
-                São José dos Campos - SP, principalmente Jardim da Granja,
-                Jardim Uirá, Putim, Residencial Flamboyant, Jardim São José,
-                Jardim Santa Inês e DCTA.
-              </p>
-            </div>
-
           </div>
 
-          {/* Main CTA */}
+          {/* Localização */}
+          <div className="mt-8 bg-white border border-gray-200 rounded-xl p-6 text-center">
+            <MapPin size={26} className="text-electric-600 mx-auto mb-3" />
+
+            <h3 className="text-lg font-bold text-navy-800 mb-2">
+              Atendimento em São José dos Campos - SP
+            </h3>
+
+            <p className="text-gray-600 text-sm">
+              Serviços elétricos residenciais em toda a cidade.
+            </p>
+          </div>
+
           <div className="text-center mt-10">
             <WhatsAppButton
               variant="cta"
