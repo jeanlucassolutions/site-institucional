@@ -4,6 +4,7 @@
 import Image from 'next/image'
 import { Menu, X, Phone, MessageCircle } from 'lucide-react'
 import { useState } from 'react'
+import { trackPhoneClick } from '../lib/googleAds'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -18,11 +19,19 @@ const Header = () => {
 
   const closeMenu = () => setIsOpen(false)
 
+  const handlePhoneClick = (
+    event: React.MouseEvent<HTMLAnchorElement>
+  ) => {
+    event.preventDefault()
+    trackPhoneClick(event.currentTarget.href)
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
 
+          {/* Logo */}
           <a
             href="#inicio"
             className="flex items-center"
@@ -50,14 +59,17 @@ const Header = () => {
               </a>
             ))}
 
+            {/* Ligar agora */}
             <a
               href="tel:+5512982798846"
+              onClick={handlePhoneClick}
               className="flex items-center gap-2 border-2 border-electric-500 text-electric-600 hover:bg-electric-500 hover:text-navy-900 font-semibold px-4 py-2.5 rounded-lg transition-all duration-300"
             >
               <Phone size={18} />
               Ligar agora
             </a>
 
+            {/* Orçamento */}
             <a
               href="https://wa.me/5512982798846"
               target="_blank"
@@ -79,7 +91,6 @@ const Header = () => {
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
-
         </div>
 
         {/* Menu Mobile */}
@@ -98,15 +109,20 @@ const Header = () => {
                 </a>
               ))}
 
+              {/* Ligar agora - Mobile */}
               <a
                 href="tel:+5512982798846"
-                onClick={closeMenu}
+                onClick={(event) => {
+                  closeMenu()
+                  handlePhoneClick(event)
+                }}
                 className="mt-2 flex items-center justify-center gap-2 border-2 border-electric-500 text-electric-600 hover:bg-electric-500 hover:text-navy-900 font-semibold px-5 py-3 rounded-lg transition-all"
               >
                 <Phone size={20} />
                 Ligar agora
               </a>
 
+              {/* WhatsApp - Mobile */}
               <a
                 href="https://wa.me/5512982798846"
                 target="_blank"
