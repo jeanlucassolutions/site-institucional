@@ -20,7 +20,7 @@ const About = () => {
           {/* Content */}
           <div>
             <span className="inline-flex items-center gap-2 text-sm font-semibold text-electric-600 mb-4">
-              <Home size={18} />
+              <Home size={18} aria-hidden="true" />
               Jean Lucas Eletricista
             </span>
 
@@ -31,16 +31,16 @@ const About = () => {
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
               A Jean Lucas Eletricista oferece serviços de elétrica
               residencial em São José dos Campos - SP. Realizamos
-              instalações, manutenção e reparos elétricos para casas
-              e apartamentos, ajudando a resolver problemas e atender
-              às necessidades da sua instalação elétrica.
+              instalações, manutenção e reparos elétricos em casas
+              e apartamentos, atendendo desde pequenos ajustes até
+              problemas que exigem uma avaliação da instalação elétrica.
             </p>
 
             <p className="text-gray-600 leading-relaxed mb-8">
-              Cada atendimento começa com a compreensão do que você
-              precisa. Antes de iniciar o serviço, você recebe
+              Nosso atendimento começa com a compreensão da sua
+              necessidade. Antes de iniciar o serviço, você recebe
               informações claras sobre a solução indicada e o
-              orçamento, para decidir com tranquilidade.
+              orçamento, para avaliar e decidir com tranquilidade.
             </p>
 
             {/* Highlights */}
@@ -52,6 +52,7 @@ const About = () => {
                 >
                   <CheckCircle
                     size={20}
+                    aria-hidden="true"
                     className="text-electric-600 flex-shrink-0 mt-0.5"
                   />
 
@@ -75,6 +76,7 @@ const About = () => {
               <div className="w-14 h-14 bg-electric-500 rounded-xl flex items-center justify-center mb-6">
                 <ShieldCheck
                   size={30}
+                  aria-hidden="true"
                   className="text-navy-900"
                 />
               </div>
@@ -86,9 +88,9 @@ const About = () => {
               <p className="text-gray-300 leading-relaxed mb-8">
                 Uma instalação elétrica precisa de avaliação e
                 cuidados adequados. Por isso, cada serviço é
-                considerado de acordo com as condições da instalação
-                e a necessidade do imóvel, priorizando uma execução
-                organizada e segura.
+                analisado de acordo com as condições da instalação
+                e as necessidades do imóvel, priorizando uma
+                execução organizada e segura.
               </p>
 
               <div className="border-t border-white/10 pt-6">
@@ -103,7 +105,10 @@ const About = () => {
             </div>
 
             {/* Decorative element */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-electric-500/10 rounded-full -z-10" />
+            <div
+              aria-hidden="true"
+              className="absolute -bottom-4 -right-4 w-24 h-24 bg-electric-500/10 rounded-full -z-10"
+            />
           </div>
 
         </div>
