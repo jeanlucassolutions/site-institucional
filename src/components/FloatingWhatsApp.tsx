@@ -9,12 +9,14 @@ const FloatingWhatsApp = () => {
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5512982798846'
 
   const message = encodeURIComponent(
-    'Olá, Jean! Gostaria de solicitar um orçamento para instalação, manutenção ou reparo elétrico residencial em São José dos Campos.'
+    'Olá, Jean! Gostaria de solicitar um orçamento para serviços elétricos residenciais em São José dos Campos.'
   )
+
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`
 
   return (
     <a
-      href={`https://wa.me/${whatsappNumber}?text=${message}`}
+      href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
       onClick={trackWhatsAppClick}
