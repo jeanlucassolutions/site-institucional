@@ -1,3 +1,4 @@
+
 'use client'
 
 import { ChevronDown, HelpCircle } from 'lucide-react'
@@ -9,43 +10,43 @@ const FAQ = () => {
     {
       question: 'Quais serviços de elétrica residencial você realiza em São José dos Campos?',
       answer:
-        'A Jean Lucas Eletricista realiza serviços de elétrica residencial em São José dos Campos, incluindo instalação de tomadas e interruptores, chuveiros elétricos, luminárias e iluminação, ventiladores de teto, disjuntores, quadros elétricos, fiação, instalações elétricas, manutenção e reparos.',
+        'A Jean Lucas Eletricista realiza instalações, manutenção e reparos elétricos residenciais em São José dos Campos - SP. Entre os serviços estão instalação de tomadas, interruptores, chuveiros elétricos, luminárias, ventiladores de teto, disjuntores, manutenção de quadros elétricos e reparos na fiação.',
     },
 
     {
       question: 'Quanto custa um serviço de eletricista em São José dos Campos?',
       answer:
-        'O valor depende do tipo de serviço, da instalação existente e da complexidade do reparo. Por isso, o orçamento é definido de acordo com a necessidade de cada atendimento. Entre em contato pelo WhatsApp, explique o problema e solicite um orçamento.',
+        'O valor depende do tipo de serviço, das condições da instalação elétrica e da complexidade do trabalho. Entre em contato pelo WhatsApp, explique o que precisa e solicite um orçamento antes de iniciar o serviço.',
     },
 
     {
-      question: 'Como solicitar um orçamento de eletricista?',
+      question: 'Como solicitar um orçamento de eletricista residencial?',
       answer:
-        'Você pode solicitar um orçamento pelo WhatsApp. Envie uma mensagem explicando o serviço que precisa ou o problema elétrico que está acontecendo. A partir dessas informações, podemos conversar sobre a necessidade do atendimento.',
+        'Você pode solicitar seu orçamento diretamente pelo WhatsApp. Envie uma mensagem explicando o problema elétrico ou o serviço que deseja realizar. Assim, podemos entender sua necessidade e conversar sobre o atendimento.',
     },
 
     {
       question: 'Vocês fazem instalação de chuveiro elétrico?',
       answer:
-        'Sim. Realizamos instalação e manutenção de chuveiros elétricos residenciais. O serviço pode envolver a verificação da instalação elétrica, fiação, conexões, disjuntor e demais componentes necessários para uma instalação adequada.',
+        'Sim. Realizamos instalação e substituição de chuveiros elétricos residenciais. O serviço pode incluir a verificação da fiação, das conexões, do disjuntor e dos demais componentes necessários para uma instalação adequada.',
     },
 
     {
       question: 'Por que o disjuntor fica desarmando?',
       answer:
-        'Um disjuntor pode desarmar por diferentes motivos, como sobrecarga no circuito, curto-circuito, problemas na fiação ou algum equipamento apresentando falha. O ideal é identificar a causa antes de simplesmente religar o disjuntor repetidamente.',
+        'Um disjuntor pode desarmar por diferentes motivos, como sobrecarga no circuito, curto-circuito, problemas na fiação ou falha em algum equipamento. É importante identificar a causa do problema antes de tentar religar o disjuntor repetidamente.',
     },
 
     {
-      question: 'Quando é necessário trocar o quadro elétrico?',
+      question: 'Quando é necessário trocar ou fazer manutenção no quadro elétrico?',
       answer:
-        'A necessidade de troca ou adequação do quadro elétrico depende das condições da instalação, quantidade de circuitos, estado dos componentes e segurança do sistema. Um eletricista pode avaliar o quadro e identificar se é necessária manutenção, substituição ou adequação.',
+        'A necessidade de manutenção, substituição ou adequação do quadro elétrico depende das condições da instalação, do estado dos componentes e da distribuição dos circuitos. Uma avaliação pode identificar quais serviços são necessários.',
     },
 
     {
       question: 'Vocês fazem instalação de tomadas e interruptores?',
       answer:
-        'Sim. Realizamos instalação e substituição de tomadas, interruptores e pontos de luz em residências. Também podemos avaliar problemas como tomada aquecendo, mau contato, faíscas ou componentes danificados.',
+        'Sim. Realizamos instalação e substituição de tomadas, interruptores e pontos de luz em residências. Também atendemos problemas como tomadas aquecendo, mau contato, faíscas e componentes danificados.',
     },
 
     {
@@ -57,25 +58,19 @@ const FAQ = () => {
     {
       question: 'Vocês instalam ventiladores de teto?',
       answer:
-        'Sim. Realizamos instalação de ventiladores de teto em residências, verificando o ponto elétrico e as conexões necessárias para a instalação.',
+        'Sim. Realizamos instalação de ventiladores de teto em residências, verificando as condições do ponto elétrico e as conexões necessárias para a instalação.',
     },
 
     {
-      question: 'Quais bairros de São José dos Campos vocês atendem?',
+      question: 'Quais regiões vocês atendem em São José dos Campos?',
       answer:
-        'O atendimento é realizado em São José dos Campos, principalmente em regiões como Jardim da Granja, Jardim Uirá, Putim, Residencial Flamboyant, Jardim São José, Jardim Santa Inês, DCTA e outros bairros da cidade. Consulte a área de atendimento no menu do site ou entre em contato para confirmar a disponibilidade.',
-    },
-
-    {
-      question: 'Vocês atendem Jardim da Granja, Jardim Uirá e Putim?',
-      answer:
-        'Sim. A Jean Lucas Eletricista atende essas regiões de São José dos Campos. Entre em contato pelo WhatsApp para explicar o serviço e confirmar o atendimento no seu endereço.',
+        'A Jean Lucas Eletricista atende serviços de elétrica residencial em toda São José dos Campos - SP. Entre em contato pelo WhatsApp para informar seu endereço e consultar a disponibilidade do atendimento.',
     },
 
     {
       question: 'O serviço de elétrica residencial possui garantia?',
       answer:
-        'Sim. A Jean Lucas Eletricista oferece garantia para o serviço realizado, conforme as condições combinadas para cada atendimento.',
+        'Sim. A Jean Lucas Eletricista oferece garantia para o serviço realizado, conforme as condições combinadas para cada atendimento. Entre em contato para esclarecer as condições referentes ao serviço solicitado.',
     },
   ]
 
@@ -97,12 +92,12 @@ const FAQ = () => {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">
-            Perguntas frequentes sobre elétrica residencial
+            Perguntas Frequentes sobre Serviços de Eletricista
           </h2>
 
           <p className="text-lg text-gray-600 leading-relaxed">
-            Encontre respostas para as principais dúvidas sobre serviços de
-            eletricista residencial em São José dos Campos.
+            Tire suas dúvidas sobre instalações, manutenção e reparos
+            elétricos residenciais com atendimento em São José dos Campos.
           </p>
         </div>
 
@@ -110,6 +105,7 @@ const FAQ = () => {
         <div className="max-w-3xl mx-auto space-y-3">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index
+            const answerId = `faq-answer-${index}`
 
             return (
               <div
@@ -121,6 +117,7 @@ const FAQ = () => {
                   onClick={() => toggleFAQ(index)}
                   className="w-full flex items-center justify-between gap-4 p-5 md:p-6 text-left hover:bg-gray-50 transition-colors"
                   aria-expanded={isOpen}
+                  aria-controls={answerId}
                 >
                   <span className="font-semibold text-navy-800 leading-relaxed">
                     {faq.question}
@@ -135,7 +132,10 @@ const FAQ = () => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 md:px-6 pb-6">
+                  <div
+                    id={answerId}
+                    className="px-5 md:px-6 pb-6"
+                  >
                     <div className="border-t border-gray-100 pt-4">
                       <p className="text-gray-600 leading-relaxed">
                         {faq.answer}
