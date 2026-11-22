@@ -15,7 +15,7 @@ const ServiceArea = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 text-electric-400 font-semibold text-sm mb-4">
-            <MapPin size={18} />
+            <MapPin size={18} aria-hidden="true" />
             Área de atendimento
           </div>
 
@@ -25,7 +25,7 @@ const ServiceArea = () => {
 
           <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Serviços de instalações, manutenção e reparos elétricos
-            residenciais para casas e apartamentos em São José dos Campos.
+            residenciais para casas e apartamentos em toda São José dos Campos.
           </p>
         </div>
 
@@ -34,7 +34,11 @@ const ServiceArea = () => {
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-10 backdrop-blur-sm text-center">
 
             <div className="w-14 h-14 bg-electric-500 rounded-full flex items-center justify-center mx-auto mb-5">
-              <MapPin size={28} className="text-navy-900" />
+              <MapPin
+                size={28}
+                aria-hidden="true"
+                className="text-navy-900"
+              />
             </div>
 
             <h3 className="text-2xl font-bold mb-3">
@@ -42,11 +46,11 @@ const ServiceArea = () => {
             </h3>
 
             <p className="text-gray-300 leading-relaxed mb-6">
-              Precisa de um eletricista para sua residência?
-              A Jean Lucas Eletricista realiza instalações,
-              manutenção e reparos elétricos em toda a cidade.
-              Entre em contato, explique sua necessidade e
-              solicite um orçamento antes de iniciar o serviço.
+              Precisa de um eletricista residencial em São José dos Campos?
+              A Jean Lucas Eletricista realiza instalações, manutenção
+              e reparos elétricos em casas e apartamentos por toda a cidade.
+              Entre em contato, explique sua necessidade e solicite
+              um orçamento antes de iniciar o serviço.
             </p>
 
             <WhatsAppButton
