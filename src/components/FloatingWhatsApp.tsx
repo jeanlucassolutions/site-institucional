@@ -9,7 +9,7 @@ const FloatingWhatsApp = () => {
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5512982798846'
 
   const message = encodeURIComponent(
-    'Olá! Gostaria de solicitar um orçamento para serviços elétricos residenciais.'
+    'Olá, Jean! Gostaria de solicitar um orçamento para instalação, manutenção ou reparo elétrico residencial em São José dos Campos.'
   )
 
   return (
@@ -18,7 +18,8 @@ const FloatingWhatsApp = () => {
       target="_blank"
       rel="noopener noreferrer"
       onClick={trackWhatsAppClick}
-      aria-label="Falar pelo WhatsApp"
+      aria-label="Solicitar orçamento de serviços elétricos pelo WhatsApp"
+      title="Solicite seu orçamento pelo WhatsApp"
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-all duration-300"
     >
       <MessageCircle size={28} />
