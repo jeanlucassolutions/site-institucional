@@ -1,5 +1,4 @@
 
-
 declare global {
   interface Window {
     gtag?: (
@@ -11,13 +10,13 @@ declare global {
 }
 
 export function trackWhatsAppClick() {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'conversion', {
-      send_to: 'AW-18473251308/a7zNCNC13IUdEOzj3ehE',
-      value: 1.0,
-      currency: 'BRL',
-    })
-  }
+  if (typeof window === 'undefined' || !window.gtag) return
+
+  window.gtag('event', 'conversion', {
+    send_to: 'AW-18473251308/a7zNCNC13IUdEOzj3ehE',
+    value: 1.0,
+    currency: 'BRL',
+  })
 }
 
 export function trackPhoneClick(url: string) {
