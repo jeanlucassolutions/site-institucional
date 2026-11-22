@@ -11,64 +11,76 @@ import {
   Wrench,
 } from 'lucide-react'
 import WhatsAppButton from './WhatsAppButton'
+import { trackWhatsAppClick } from '../lib/googleAds'
 
 const Problems = () => {
-  const whatsappNumber = '5512982798846'
+  const whatsappNumber =
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5512982798846'
 
   const problems = [
     {
       icon: AlertCircle,
       label: 'Tomada esquentando ou sem funcionar',
-      message: 'Olá, Jean! Estou com uma tomada esquentando ou sem funcionar e gostaria de solicitar uma avaliação.',
+      message:
+        'Olá, Jean! Estou com uma tomada esquentando ou sem funcionar e gostaria de solicitar uma avaliação em São José dos Campos.',
     },
     {
       icon: Zap,
       label: 'Interruptor com defeito',
-      message: 'Olá, Jean! Estou com um problema em um interruptor da minha residência e gostaria de solicitar um orçamento.',
+      message:
+        'Olá, Jean! Estou com um problema em um interruptor da minha residência e gostaria de solicitar um orçamento em São José dos Campos.',
     },
     {
       icon: Lightbulb,
       label: 'Chuveiro elétrico com problema',
-      message: 'Olá, Jean! Estou com um problema no chuveiro elétrico e gostaria de solicitar uma avaliação.',
+      message:
+        'Olá, Jean! Estou com um problema no chuveiro elétrico e gostaria de solicitar uma avaliação em São José dos Campos.',
     },
     {
       icon: ShieldAlert,
       label: 'Disjuntor desarmando',
-      message: 'Olá, Jean! Meu disjuntor está desarmando frequentemente e gostaria de solicitar uma avaliação.',
+      message:
+        'Olá, Jean! Meu disjuntor está desarmando frequentemente e gostaria de solicitar uma avaliação em São José dos Campos.',
     },
     {
       icon: Lightbulb,
       label: 'Lâmpadas piscando ou sem energia',
-      message: 'Olá, Jean! Estou com problemas na iluminação da minha residência e gostaria de solicitar um orçamento.',
+      message:
+        'Olá, Jean! Estou com problemas na iluminação da minha residência e gostaria de solicitar um orçamento em São José dos Campos.',
     },
     {
       icon: Wind,
       label: 'Instalação de ventilador',
-      message: 'Olá, Jean! Preciso instalar ou realizar manutenção em um ventilador de teto.',
+      message:
+        'Olá, Jean! Preciso instalar ou realizar manutenção em um ventilador de teto em São José dos Campos.',
     },
     {
       icon: Wrench,
       label: 'Problema na fiação elétrica',
-      message: 'Olá, Jean! Estou com um problema na fiação elétrica da minha residência e gostaria de solicitar uma avaliação.',
+      message:
+        'Olá, Jean! Estou com um problema na fiação elétrica da minha residência e gostaria de solicitar uma avaliação em São José dos Campos.',
     },
     {
       icon: Box,
       label: 'Problema no quadro elétrico',
-      message: 'Olá, Jean! Estou com um problema no quadro elétrico da minha residência e gostaria de solicitar uma avaliação.',
+      message:
+        'Olá, Jean! Estou com um problema no quadro elétrico da minha residência e gostaria de solicitar uma avaliação em São José dos Campos.',
     },
     {
       icon: Zap,
       label: 'Curto-circuito ou falta de energia',
-      message: 'Olá, Jean! Estou com um possível curto-circuito ou falta de energia na minha residência e preciso de ajuda.',
+      message:
+        'Olá, Jean! Estou com um possível curto-circuito ou falta de energia na minha residência e gostaria de solicitar ajuda em São José dos Campos.',
     },
   ]
 
   const handleProblemClick = (message: string) => {
     const encodedMessage = encodeURIComponent(message)
-    window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodedMessage}`,
-      '_blank'
-    )
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`
+
+    trackWhatsAppClick()
+
+    window.open(whatsappLink, '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -92,14 +104,15 @@ const Problems = () => {
 
         {/* Problems Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
-          {problems.map((problem, index) => {
+          {problems.map((problem) => {
             const Icon = problem.icon
 
             return (
               <button
-                key={index}
+                key={problem.label}
                 type="button"
                 onClick={() => handleProblemClick(problem.message)}
+                aria-label={`Solicitar atendimento: ${problem.label}`}
                 className="group p-6 bg-white border border-gray-200 rounded-xl hover:shadow-lg hover:border-electric-500 transition-all duration-300 flex flex-col items-center text-center cursor-pointer"
               >
                 {/* Icon */}
