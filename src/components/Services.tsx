@@ -15,56 +15,56 @@ import WhatsAppButton from './WhatsAppButton'
 const Services = () => {
   const services = [
     {
-      image: '/images/servico-tomadas.png',
+      image: '/images/servico-tomadas.webp',
       icon: Zap,
       title: 'Instalação de Tomadas e Interruptores',
       description:
         'Instalação, troca e manutenção de tomadas e interruptores. Soluções para pontos de energia, mau contato e problemas nas conexões elétricas.',
     },
     {
-      image: '/images/servico-chuveiro.png',
+      image: '/images/servico-chuveiro.webp',
       icon: Lightbulb,
       title: 'Instalação de Chuveiro Elétrico',
       description:
         'Instalação e substituição de chuveiros elétricos, com verificação das conexões, fiação e condições do circuito para maior segurança.',
     },
     {
-      image: '/images/servico-iluminacao.png',
+      image: '/images/servico-iluminacao.webp',
       icon: Lightbulb,
       title: 'Instalação de Luminárias e Iluminação',
       description:
         'Instalação e substituição de luminárias, plafons, arandelas e pontos de luz para iluminação residencial.',
     },
     {
-      image: '/images/servico-ventilar.png',
+      image: '/images/servico-ventilar.webp',
       icon: Wind,
       title: 'Instalação de Ventilador de Teto',
       description:
         'Instalação e manutenção de ventiladores de teto, incluindo montagem, conexões elétricas e verificação do ponto de instalação.',
     },
     {
-      image: '/images/servico-disjuntor.png',
+      image: '/images/servico-disjuntor.webp',
       icon: ShieldAlert,
       title: 'Troca e Instalação de Disjuntores',
       description:
         'Substituição e instalação de disjuntores elétricos, com avaliação do circuito e identificação de possíveis sobrecargas e falhas.',
     },
     {
-      image: '/images/servico-quadro-eletrico.png',
+      image: '/images/servico-quadro-eletrico.webp',
       icon: Box,
       title: 'Manutenção de Quadros Elétricos',
       description:
         'Manutenção, organização e reparos em quadros de distribuição elétrica, com avaliação de disjuntores, conexões e circuitos.',
     },
     {
-      image: '/images/servico-fiacao.png',
+      image: '/images/servico-fiacao.webp',
       icon: Zap,
       title: 'Instalação e Reparos na Fiação Elétrica',
       description:
         'Instalação e manutenção de fiação elétrica residencial, correção de conexões e reparos em circuitos e pontos de energia.',
     },
     {
-      image: '/images/servico-manutencao.png',
+      image: '/images/servico-manutencao.webp',
       icon: Wrench,
       title: 'Manutenção e Reparos Elétricos Residenciais',
       description:
@@ -90,12 +90,12 @@ const Services = () => {
 
         {/* Grid de serviços */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {services.map((service, index) => {
+          {services.map((service) => {
             const Icon = service.icon
 
             return (
               <div
-                key={index}
+                key={service.image}
                 className="group overflow-hidden bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-all duration-300 hover:border-electric-500"
               >
 
@@ -103,7 +103,7 @@ const Services = () => {
                 <div className="relative h-44 w-full overflow-hidden">
                   <Image
                     src={service.image}
-                    alt={`${service.title} em São José dos Campos - Jean Lucas Eletricista`}
+                    alt={`${service.title} residencial em São José dos Campos`}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
