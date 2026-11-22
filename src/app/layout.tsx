@@ -79,7 +79,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: '/images/hero-jean-lucas-eletricista.png',
+        url: '/images/hero-jean-lucas-eletricista.webp',
         width: 1200,
         height: 630,
         alt:
@@ -97,13 +97,13 @@ export const metadata: Metadata = {
     description:
       'Eletricista residencial em São José dos Campos para instalações, manutenção e reparos elétricos.',
 
-    images: ['/images/hero-jean-lucas-eletricista.png'],
+    images: ['/images/hero-jean-lucas-eletricista.webp'],
   },
 
   icons: {
-    icon: '/images/logo-jean-lucas-eletricista.png',
-    shortcut: '/images/logo-jean-lucas-eletricista.png',
-    apple: '/images/logo-jean-lucas-eletricista.png',
+    icon: '/images/logo-jean-lucas-eletricista.webp',
+    shortcut: '/images/logo-jean-lucas-eletricista.webp',
+    apple: '/images/logo-jean-lucas-eletricista.webp',
   },
 }
 
@@ -121,9 +121,9 @@ const localBusinessSchema = {
 
   url: siteUrl,
 
-  logo: `${siteUrl}/images/logo-jean-lucas-eletricista.png`,
+  logo: `${siteUrl}/images/logo-jean-lucas-eletricista.webp`,
 
-  image: `${siteUrl}/images/hero-jean-lucas-eletricista.png`,
+  image: `${siteUrl}/images/hero-jean-lucas-eletricista.webp`,
 
   description:
     'Eletricista residencial em São José dos Campos - SP. Serviços de instalação, manutenção e reparos elétricos residenciais.',
@@ -310,7 +310,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema),
+            __html: JSON.stringify(localBusinessSchema).replace(/</g, '\\u003c'),
           }}
         />
 
@@ -318,7 +318,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
+            __html: JSON.stringify(faqSchema).replace(/</g, '\\u003c'),
           }}
         />
       </head>
