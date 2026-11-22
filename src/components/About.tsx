@@ -1,3 +1,4 @@
+
 'use client'
 
 import { CheckCircle, ShieldCheck, Home } from 'lucide-react'
@@ -5,10 +6,10 @@ import WhatsAppButton from './WhatsAppButton'
 
 const About = () => {
   const highlights = [
-    'Serviços de elétrica residencial',
-    'Orçamento antes da execução',
-    'Atendimento em São José dos Campos',
-    'Serviços realizados com atenção à segurança',
+    'Instalações elétricas residenciais',
+    'Manutenção e reparos elétricos',
+    'Orçamento antes de iniciar o serviço',
+    'Atendimento em toda São José dos Campos',
   ]
 
   return (
@@ -24,21 +25,22 @@ const About = () => {
             </span>
 
             <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-6">
-              Elétrica residencial com atendimento direto e transparente
+              Eletricista Residencial em São José dos Campos
             </h2>
 
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
-              Precisa resolver um problema elétrico, instalar um equipamento
-              ou realizar uma manutenção em sua residência? A Jean Lucas
-              Eletricista atende serviços de elétrica residencial em São José
-              dos Campos.
+              A Jean Lucas Eletricista oferece serviços de elétrica
+              residencial em São José dos Campos - SP. Realizamos
+              instalações, manutenção e reparos elétricos para casas
+              e apartamentos, ajudando a resolver problemas e atender
+              às necessidades da sua instalação elétrica.
             </p>
 
             <p className="text-gray-600 leading-relaxed mb-8">
-              O atendimento começa entendendo a sua necessidade. Depois,
-              você recebe as informações sobre o serviço e o orçamento antes
-              da execução, buscando oferecer uma solução segura e adequada
-              para sua residência.
+              Cada atendimento começa com a compreensão do que você
+              precisa. Antes de iniciar o serviço, você recebe
+              informações claras sobre a solução indicada e o
+              orçamento, para decidir com tranquilidade.
             </p>
 
             {/* Highlights */}
@@ -82,15 +84,16 @@ const About = () => {
               </h3>
 
               <p className="text-gray-300 leading-relaxed mb-8">
-                Instalações elétricas precisam de atenção e cuidado.
-                Por isso, cada serviço deve ser avaliado de acordo com a
-                necessidade da residência, buscando uma execução segura,
-                organizada e de qualidade.
+                Uma instalação elétrica precisa de avaliação e
+                cuidados adequados. Por isso, cada serviço é
+                considerado de acordo com as condições da instalação
+                e a necessidade do imóvel, priorizando uma execução
+                organizada e segura.
               </p>
 
               <div className="border-t border-white/10 pt-6">
                 <p className="text-sm text-gray-400 mb-2">
-                  Precisa de um eletricista?
+                  Precisa de um eletricista residencial?
                 </p>
 
                 <p className="text-electric-400 font-semibold">
