@@ -8,6 +8,7 @@ import {
   MessageCircle,
   Phone,
 } from 'lucide-react'
+import { type MouseEvent } from 'react'
 import WhatsAppButton from './WhatsAppButton'
 import {
   trackPhoneClick,
@@ -25,7 +26,7 @@ const Contact = () => {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
 
   const handlePhoneClick = (
-    event: React.MouseEvent<HTMLAnchorElement>
+    event: MouseEvent<HTMLAnchorElement>
   ) => {
     event.preventDefault()
     trackPhoneClick(event.currentTarget.href)
@@ -38,7 +39,7 @@ const Contact = () => {
 
           <div className="text-center mb-12">
             <span className="inline-flex items-center gap-2 text-sm font-semibold text-electric-600 mb-4">
-              <MessageCircle size={18} />
+              <MessageCircle size={18} aria-hidden="true" />
               Entre em contato
             </span>
 
@@ -60,12 +61,12 @@ const Contact = () => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={trackWhatsAppClick}
+              onClick={() => trackWhatsAppClick()}
               aria-label="Solicitar orçamento pelo WhatsApp"
               className="group bg-white border-2 border-electric-500 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
-                <MessageCircle size={24} className="text-electric-600 group-hover:text-white" />
+                <MessageCircle size={24} aria-hidden="true" className="text-electric-600 group-hover:text-white" />
               </div>
 
               <h3 className="text-lg font-bold text-navy-800 mb-2">
@@ -90,7 +91,7 @@ const Contact = () => {
               className="group bg-white border-2 border-electric-500 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
-                <Phone size={24} className="text-electric-600 group-hover:text-white" />
+                <Phone size={24} aria-hidden="true" className="text-electric-600 group-hover:text-white" />
               </div>
 
               <h3 className="text-lg font-bold text-navy-800 mb-2">
@@ -113,7 +114,7 @@ const Contact = () => {
               className="group bg-white border border-gray-200 rounded-xl p-6 hover:border-electric-500 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
-                <Mail size={24} className="text-electric-600 group-hover:text-white" />
+                <Mail size={24} aria-hidden="true" className="text-electric-600 group-hover:text-white" />
               </div>
 
               <h3 className="text-lg font-bold text-navy-800 mb-2">
@@ -135,10 +136,11 @@ const Contact = () => {
               href="https://www.instagram.com/jeanlucas_eletricista/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visitar Instagram da Jean Lucas Eletricista (abre em nova aba)"
               className="group bg-white border border-gray-200 rounded-xl p-6 hover:border-electric-500 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
-                <Instagram size={24} className="text-electric-600 group-hover:text-white" />
+                <Instagram size={24} aria-hidden="true" className="text-electric-600 group-hover:text-white" />
               </div>
 
               <h3 className="text-lg font-bold text-navy-800 mb-2">
@@ -159,7 +161,7 @@ const Contact = () => {
 
           {/* Localização */}
           <div className="mt-8 bg-white border border-gray-200 rounded-xl p-6 text-center">
-            <MapPin size={26} className="text-electric-600 mx-auto mb-3" />
+            <MapPin size={26} aria-hidden="true" className="text-electric-600 mx-auto mb-3" />
 
             <h3 className="text-lg font-bold text-navy-800 mb-2">
               Eletricista Residencial em São José dos Campos - SP
