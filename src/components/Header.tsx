@@ -32,13 +32,13 @@ const Header = () => {
     event: MouseEvent<HTMLAnchorElement>
   ) => {
     event.preventDefault()
-    trackPhoneClick(event.currentTarget.href)
     closeMenu()
+    trackPhoneClick(event.currentTarget.href)
   }
 
   const handleWhatsAppClick = () => {
-    trackWhatsAppClick()
     closeMenu()
+    trackWhatsAppClick()
   }
 
   return (
@@ -54,7 +54,7 @@ const Header = () => {
             aria-label="Jean Lucas Eletricista - Página inicial"
           >
             <Image
-              src="/images/logo-jean-lucas-eletricista.png"
+              src="/images/logo-jean-lucas-eletricista.webp"
               alt="Jean Lucas Eletricista Residencial em São José dos Campos"
               width={180}
               height={60}
@@ -72,6 +72,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={closeMenu}
                 className="text-sm font-medium text-gray-700 hover:text-electric-600 transition-colors duration-300"
               >
                 {item.label}
