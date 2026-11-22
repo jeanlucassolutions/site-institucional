@@ -9,13 +9,13 @@ const Differentials = () => {
       icon: Clock,
       title: 'Atendimento Ágil',
       description:
-        'Entre em contato, explique seu problema elétrico e combine o atendimento em São José dos Campos.',
+        'Entre em contato, explique sua necessidade e combine o atendimento de elétrica residencial em São José dos Campos.',
     },
     {
       icon: Zap,
       title: 'Orçamento Transparente',
       description:
-        'Receba informações claras sobre o serviço e o orçamento antes de iniciar qualquer instalação ou reparo elétrico.',
+        'Receba informações claras sobre o serviço e o orçamento antes de iniciar qualquer instalação, manutenção ou reparo elétrico.',
     },
     {
       icon: Wrench,
@@ -27,7 +27,7 @@ const Differentials = () => {
       icon: CheckCircle,
       title: 'Atendimento Residencial',
       description:
-        'Atuação focada em elétrica residencial, incluindo tomadas, chuveiros, disjuntores, iluminação e fiação.',
+        'Atuação em elétrica residencial, incluindo tomadas, chuveiros, disjuntores, iluminação, ventiladores e fiação.',
     },
     {
       icon: Shield,
@@ -55,20 +55,20 @@ const Differentials = () => {
           </h2>
 
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Eletricista residencial em São José dos Campos, com instalações,
-            reparos e manutenção elétrica, orçamento transparente e atenção
-            à segurança.
+            Eletricista residencial em São José dos Campos, com serviços
+            de instalação, manutenção e reparos elétricos, orçamento
+            transparente e atenção à segurança.
           </p>
         </div>
 
         {/* Differentials Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-          {differentials.map((diff, index) => {
+          {differentials.map((diff) => {
             const Icon = diff.icon
 
             return (
               <div
-                key={index}
+                key={diff.title}
                 className="group p-8 bg-gradient-to-br from-navy-50 to-white border border-gray-200 rounded-xl hover:shadow-lg-light hover:border-electric-500 transition-all duration-300 text-center"
               >
 
@@ -76,6 +76,7 @@ const Differentials = () => {
                 <div className="w-16 h-16 bg-electric-500/10 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:bg-electric-500 transition-all duration-300">
                   <Icon
                     size={32}
+                    aria-hidden="true"
                     className="text-electric-600 group-hover:text-white transition-colors duration-300"
                   />
                 </div>
