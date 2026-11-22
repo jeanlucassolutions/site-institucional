@@ -11,7 +11,11 @@ const Footer = () => {
   const whatsappNumber =
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5512982798846'
 
-  const whatsappLink = `https://wa.me/${whatsappNumber}`
+  const whatsappMessage = encodeURIComponent(
+    'Olá, Jean! Gostaria de solicitar um orçamento para serviços elétricos residenciais em São José dos Campos.'
+  )
+
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
 
   const instagramUrl =
     process.env.NEXT_PUBLIC_INSTAGRAM_URL ||
@@ -40,9 +44,10 @@ const Footer = () => {
             <div className="flex items-center space-x-3">
               <div className="relative w-12 h-12 flex-shrink-0">
                 <Image
-                  src="/images/logo-jean-lucas-eletricista.png"
+                  src="/images/logo-jean-lucas-eletricista.webp"
                   alt="Jean Lucas Eletricista residencial em São José dos Campos"
                   fill
+                  sizes="48px"
                   className="object-contain"
                 />
               </div>
@@ -91,6 +96,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   onClick={trackWhatsAppClick}
                   className="text-gray-400 hover:text-electric-500 transition-colors duration-300 flex items-center gap-2"
+                  aria-label="Entrar em contato pelo WhatsApp"
                 >
                   <MessageCircle size={16} />
                   WhatsApp
