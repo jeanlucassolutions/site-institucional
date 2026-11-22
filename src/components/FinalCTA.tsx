@@ -11,14 +11,24 @@ const FinalCTA = () => {
         <div className="relative overflow-hidden max-w-5xl mx-auto rounded-2xl bg-gradient-to-br from-navy-800 to-navy-700 border border-white/10 p-8 md:p-12">
 
           {/* Decorative elements */}
-          <div className="absolute -top-20 -right-20 w-56 h-56 bg-electric-500/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -left-20 w-64 h-64 bg-electric-500/5 rounded-full blur-3xl pointer-events-none" />
+          <div
+            aria-hidden="true"
+            className="absolute -top-20 -right-20 w-56 h-56 bg-electric-500/10 rounded-full blur-3xl pointer-events-none"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute -bottom-24 -left-20 w-64 h-64 bg-electric-500/5 rounded-full blur-3xl pointer-events-none"
+          />
 
           <div className="relative z-10 text-center">
 
             {/* Icon */}
             <div className="w-16 h-16 mx-auto mb-6 bg-electric-500 rounded-full flex items-center justify-center">
-              <Zap size={30} className="text-navy-900" />
+              <Zap
+                size={30}
+                aria-hidden="true"
+                className="text-navy-900"
+              />
             </div>
 
             {/* Heading */}
@@ -28,10 +38,10 @@ const FinalCTA = () => {
 
             {/* Description */}
             <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
-              Conte com serviços de instalações, manutenção e reparos
-              elétricos residenciais. Entre em contato com Jean Lucas
-              Eletricista, explique sua necessidade e solicite um orçamento
-              pelo WhatsApp.
+              Precisa de instalações, manutenção ou reparos elétricos
+              residenciais? Entre em contato com Jean Lucas Eletricista
+              em São José dos Campos - SP, explique sua necessidade
+              e solicite um orçamento pelo WhatsApp.
             </p>
 
             {/* CTA */}
@@ -44,16 +54,27 @@ const FinalCTA = () => {
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-5 text-sm text-gray-400">
 
               <div className="flex items-center gap-2">
-                <MessageCircle size={17} className="text-electric-500" />
+                <MessageCircle
+                  size={17}
+                  aria-hidden="true"
+                  className="text-electric-500"
+                />
                 Atendimento pelo WhatsApp
               </div>
 
-              <div className="hidden sm:block text-gray-600">
+              <div
+                aria-hidden="true"
+                className="hidden sm:block text-gray-600"
+              >
                 •
               </div>
 
               <div className="flex items-center gap-2">
-                <ArrowRight size={17} className="text-electric-500" />
+                <ArrowRight
+                  size={17}
+                  aria-hidden="true"
+                  className="text-electric-500"
+                />
                 São José dos Campos - SP
               </div>
 
