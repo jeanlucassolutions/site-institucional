@@ -1,3 +1,4 @@
+
 'use client'
 
 import Image from 'next/image'
@@ -40,26 +41,26 @@ const Footer = () => {
               <div className="relative w-12 h-12 flex-shrink-0">
                 <Image
                   src="/images/logo-jean-lucas-eletricista.png"
-                  alt="Jean Lucas Eletricista"
+                  alt="Jean Lucas Eletricista residencial em São José dos Campos"
                   fill
                   className="object-contain"
                 />
               </div>
 
               <span className="font-bold text-white">
-                Jean Lucas
+                Jean Lucas Eletricista
               </span>
             </div>
 
             <p className="text-sm text-gray-400">
-              Eletricista residencial em São José dos Campos
+              Serviços de instalação, manutenção e reparos elétricos residenciais em São José dos Campos - SP.
             </p>
           </div>
 
           {/* Navegação */}
           <div>
             <h3 className="font-semibold text-white mb-4">
-              Menu
+              Navegação
             </h3>
 
             <ul className="space-y-2 text-sm">
@@ -79,7 +80,7 @@ const Footer = () => {
           {/* Contato */}
           <div>
             <h3 className="font-semibold text-white mb-4">
-              Contato
+              Entre em contato
             </h3>
 
             <ul className="space-y-3 text-sm">
@@ -135,15 +136,15 @@ const Footer = () => {
           {/* Localização */}
           <div>
             <h3 className="font-semibold text-white mb-4">
-              Localização
+              Área de atendimento
             </h3>
 
             <p className="text-sm text-gray-400 mb-4">
-              São José dos Campos - SP, Brasil
+              São José dos Campos - SP, Brasil.
             </p>
 
             <div className="text-xs text-gray-500">
-              <p>Área de atendimento:</p>
+              <p>Atendimento residencial em:</p>
 
               <p className="text-electric-500 font-semibold mt-2">
                 Toda São José dos Campos - SP
