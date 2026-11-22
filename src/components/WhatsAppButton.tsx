@@ -41,7 +41,7 @@ const WhatsAppButton = ({
           : 'inline-flex items-center justify-center gap-2 bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 shadow-sm'
       }
     >
-      <MessageCircle size={20} />
+      <MessageCircle size={20} aria-hidden="true" />
       {text || (isCTA ? 'Solicitar orçamento' : 'WhatsApp')}
     </a>
   )
