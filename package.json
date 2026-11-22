@@ -1,3 +1,4 @@
+
 {
   "name": "jean-lucas-eletricista",
   "version": "1.0.0",
@@ -5,7 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -25,4 +28,3 @@
     "eslint-config-next": "^14.2.35"
   }
 }
-
