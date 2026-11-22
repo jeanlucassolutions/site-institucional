@@ -1,7 +1,7 @@
 
 'use client'
 
-import { MapPin, MessageCircle } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import WhatsAppButton from './WhatsAppButton'
 
 const ServiceArea = () => {
@@ -20,12 +20,12 @@ const ServiceArea = () => {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Eletricista residencial em São José dos Campos
+            Eletricista Residencial em Toda São José dos Campos - SP
           </h2>
 
           <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Atendimento de serviços elétricos residenciais em toda
-            São José dos Campos - SP.
+            Serviços de instalações, manutenção e reparos elétricos
+            residenciais para casas e apartamentos em São José dos Campos.
           </p>
         </div>
 
@@ -38,19 +38,20 @@ const ServiceArea = () => {
             </div>
 
             <h3 className="text-2xl font-bold mb-3">
-              Atendimento em toda a cidade
+              Atendimento em toda São José dos Campos
             </h3>
 
             <p className="text-gray-300 leading-relaxed mb-6">
-              Precisa de um eletricista? Entre em contato, explique
-              o serviço que precisa e solicite seu orçamento.
-              Atendemos serviços elétricos residenciais em
-              São José dos Campos - SP.
+              Precisa de um eletricista para sua residência?
+              A Jean Lucas Eletricista realiza instalações,
+              manutenção e reparos elétricos em toda a cidade.
+              Entre em contato, explique sua necessidade e
+              solicite um orçamento antes de iniciar o serviço.
             </p>
 
             <WhatsAppButton
               variant="cta"
-              text="Solicitar orçamento"
+              text="Solicitar orçamento pelo WhatsApp"
             />
 
             <p className="text-sm text-gray-400 mt-4">
