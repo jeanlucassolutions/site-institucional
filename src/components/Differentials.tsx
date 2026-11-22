@@ -1,3 +1,4 @@
+
 'use client'
 
 import { Zap, Clock, CheckCircle, Shield, Wrench } from 'lucide-react'
@@ -6,33 +7,33 @@ const Differentials = () => {
   const differentials = [
     {
       icon: Clock,
-      title: 'Atendimento Rápido',
+      title: 'Atendimento Ágil',
       description:
-        'Resposta ágil para entender sua necessidade e combinar o atendimento.',
+        'Entre em contato, explique seu problema elétrico e combine o atendimento em São José dos Campos.',
     },
     {
       icon: Zap,
       title: 'Orçamento Transparente',
       description:
-        'Você recebe informações claras sobre o serviço antes da execução.',
+        'Receba informações claras sobre o serviço e o orçamento antes de iniciar qualquer instalação ou reparo elétrico.',
     },
     {
       icon: Wrench,
-      title: 'Experiência',
+      title: 'Instalações e Reparos',
       description:
-        'Experiência em instalações, manutenções e reparos elétricos residenciais.',
+        'Serviços de eletricista residencial para instalações, manutenção e reparos elétricos em casas e apartamentos.',
     },
     {
       icon: CheckCircle,
-      title: 'Especialista Residencial',
+      title: 'Atendimento Residencial',
       description:
-        'Atendimento focado em soluções elétricas para casas e apartamentos.',
+        'Atuação focada em elétrica residencial, incluindo tomadas, chuveiros, disjuntores, iluminação e fiação.',
     },
     {
       icon: Shield,
       title: 'Segurança e Qualidade',
       description:
-        'Serviços realizados com atenção à segurança e ao bom funcionamento da instalação.',
+        'Atenção às condições da instalação elétrica e aos cuidados necessários para realizar cada serviço com segurança.',
     },
   ]
 
@@ -54,8 +55,9 @@ const Differentials = () => {
           </h2>
 
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Atendimento residencial com foco em segurança, qualidade e
-            transparência em cada serviço.
+            Eletricista residencial em São José dos Campos, com instalações,
+            reparos e manutenção elétrica, orçamento transparente e atenção
+            à segurança.
           </p>
         </div>
 
