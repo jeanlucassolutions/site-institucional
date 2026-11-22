@@ -22,7 +22,7 @@ const FAQ = () => {
     {
       question: 'Como solicitar um orçamento de eletricista residencial?',
       answer:
-        'Você pode solicitar seu orçamento diretamente pelo WhatsApp. Envie uma mensagem explicando o problema elétrico ou o serviço que deseja realizar. Assim, podemos entender sua necessidade e conversar sobre o atendimento.',
+        'Você pode solicitar seu orçamento diretamente pelo WhatsApp. Envie uma mensagem explicando o problema elétrico ou o serviço que deseja realizar. Se possível, envie fotos ou vídeos para facilitar a avaliação inicial.',
     },
 
     {
@@ -52,7 +52,7 @@ const FAQ = () => {
     {
       question: 'Vocês fazem manutenção e reparos elétricos residenciais?',
       answer:
-        'Sim. Realizamos manutenção e reparos em instalações elétricas residenciais, incluindo problemas em tomadas, interruptores, iluminação, fiação, disjuntores e quadros elétricos.',
+        'Sim. Realizamos manutenção e reparos em instalações elétricas residenciais em São José dos Campos, incluindo problemas em tomadas, interruptores, iluminação, fiação, disjuntores e quadros elétricos.',
     },
 
     {
@@ -125,6 +125,7 @@ const FAQ = () => {
 
                   <ChevronDown
                     size={20}
+                    aria-hidden="true"
                     className={`flex-shrink-0 text-electric-600 transition-transform duration-300 ${
                       isOpen ? 'rotate-180' : ''
                     }`}
