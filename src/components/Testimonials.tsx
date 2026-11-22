@@ -1,3 +1,4 @@
+
 'use client'
 
 import { Star, MapPin, ExternalLink } from 'lucide-react'
@@ -19,12 +20,13 @@ const Testimonials = () => {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">
-            Veja o que os clientes dizem
+            Confira as Avaliações da Jean Lucas Eletricista
           </h2>
 
           <p className="text-lg text-gray-600">
-            Confira diretamente no Google as experiências de clientes que
-            contrataram os serviços da Jean Lucas Eletricista.
+            A opinião dos clientes é importante. Acesse nosso perfil
+            no Google e confira as avaliações publicadas por quem
+            já contratou nossos serviços.
           </p>
         </div>
 
@@ -46,7 +48,7 @@ const Testimonials = () => {
             {/* Google */}
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 mb-5">
               <MapPin size={18} className="text-electric-600" />
-              Google
+              Perfil da empresa no Google
             </div>
 
             <h3 className="text-xl md:text-2xl font-bold text-navy-800 mb-3">
@@ -54,9 +56,10 @@ const Testimonials = () => {
             </h3>
 
             <p className="text-gray-600 leading-relaxed max-w-xl mx-auto mb-7">
-              Quer conhecer a experiência de quem já contratou nossos
-              serviços? Acesse nosso perfil no Google e confira as avaliações
-              publicadas pelos clientes.
+              Está procurando um eletricista residencial em São José
+              dos Campos? Conheça as experiências compartilhadas
+              pelos clientes e saiba mais sobre os serviços da
+              Jean Lucas Eletricista.
             </p>
 
             {/* Google Button */}
@@ -76,12 +79,12 @@ const Testimonials = () => {
         {/* CTA */}
         <div className="text-center mt-10">
           <p className="text-sm text-gray-500 mb-4">
-            Precisa de um eletricista residencial?
+            Precisa de instalações, manutenção ou reparos elétricos?
           </p>
 
           <WhatsAppButton
             variant="cta"
-            text="Solicitar orçamento"
+            text="Solicitar orçamento pelo WhatsApp"
           />
         </div>
 
