@@ -24,6 +24,10 @@ const Hero = () => {
     'Olá, Jean Lucas! Gostaria de solicitar um orçamento de serviço elétrico.'
   )}`
 
+  const handleWhatsAppClick = () => {
+    trackWhatsAppClick()
+  }
+
   const handlePhoneClick = (
     event: MouseEvent<HTMLAnchorElement>
   ) => {
@@ -76,7 +80,7 @@ const Hero = () => {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={trackWhatsAppClick}
+                onClick={handleWhatsAppClick}
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-green-500"
               >
                 <MessageCircle size={20} />
@@ -160,7 +164,7 @@ const Hero = () => {
             <div className="relative h-[420px] overflow-hidden rounded-3xl border border-white/10 shadow-2xl md:h-[520px] lg:h-[580px]">
 
               <Image
-                src="/images/hero-jean-lucas-eletricista.png"
+                src="/images/hero-jean-lucas-eletricista.webp"
                 alt="Eletricista residencial realizando manutenção em quadro elétrico"
                 fill
                 priority
