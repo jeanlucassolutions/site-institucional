@@ -15,11 +15,14 @@ import {
 } from '../lib/googleAds'
 
 const Contact = () => {
-  const whatsappNumber = '5512982798846'
+  const whatsappNumber =
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5512982798846'
 
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    'Olá! Gostaria de solicitar um orçamento para serviços de elétrica residencial em São José dos Campos.'
-  )}`
+  const whatsappMessage = encodeURIComponent(
+    'Olá, Jean! Gostaria de solicitar um orçamento para serviços elétricos residenciais em São José dos Campos.'
+  )
+
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
 
   const handlePhoneClick = (
     event: React.MouseEvent<HTMLAnchorElement>
@@ -58,6 +61,7 @@ const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={trackWhatsAppClick}
+              aria-label="Solicitar orçamento pelo WhatsApp"
               className="group bg-white border-2 border-electric-500 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
@@ -82,6 +86,7 @@ const Contact = () => {
             <a
               href="tel:+5512982798846"
               onClick={handlePhoneClick}
+              aria-label="Ligar para Jean Lucas Eletricista"
               className="group bg-white border-2 border-electric-500 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
             >
               <div className="w-12 h-12 bg-electric-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-electric-500 transition-all duration-300">
