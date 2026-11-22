@@ -1,3 +1,4 @@
+
 'use client'
 
 import Image from 'next/image'
@@ -18,56 +19,56 @@ const Services = () => {
       icon: Zap,
       title: 'Instalação de Tomadas e Interruptores',
       description:
-        'Instalação e substituição de tomadas, interruptores e pontos de energia para residências em São José dos Campos.',
+        'Instalação, troca e manutenção de tomadas e interruptores. Soluções para pontos de energia, mau contato e problemas nas conexões elétricas.',
     },
     {
       image: '/images/servico-chuveiro.png',
       icon: Lightbulb,
       title: 'Instalação de Chuveiro Elétrico',
       description:
-        'Instalação e manutenção de chuveiros elétricos, com atenção às condições do circuito e à segurança da instalação.',
+        'Instalação e substituição de chuveiros elétricos, com verificação das conexões, fiação e condições do circuito para maior segurança.',
     },
     {
       image: '/images/servico-iluminacao.png',
       icon: Lightbulb,
-      title: 'Luminárias e Iluminação',
+      title: 'Instalação de Luminárias e Iluminação',
       description:
-        'Instalação de luminárias, arandelas, plafons e pontos de iluminação para ambientes residenciais.',
+        'Instalação e substituição de luminárias, plafons, arandelas e pontos de luz para iluminação residencial.',
     },
     {
       image: '/images/servico-ventilar.png',
       icon: Wind,
       title: 'Instalação de Ventilador de Teto',
       description:
-        'Instalação e manutenção de ventiladores de teto, incluindo conexão elétrica e avaliação do ponto de instalação.',
+        'Instalação e manutenção de ventiladores de teto, incluindo montagem, conexões elétricas e verificação do ponto de instalação.',
     },
     {
       image: '/images/servico-disjuntor.png',
       icon: ShieldAlert,
-      title: 'Instalação e Troca de Disjuntores',
+      title: 'Troca e Instalação de Disjuntores',
       description:
-        'Instalação e substituição de disjuntores residenciais, de acordo com as características do circuito elétrico.',
+        'Substituição e instalação de disjuntores elétricos, com avaliação do circuito e identificação de possíveis sobrecargas e falhas.',
     },
     {
       image: '/images/servico-quadro-eletrico.png',
       icon: Box,
-      title: 'Quadros Elétricos',
+      title: 'Manutenção de Quadros Elétricos',
       description:
-        'Instalação, manutenção e reparos em quadros elétricos residenciais, incluindo avaliação de disjuntores e circuitos.',
+        'Manutenção, organização e reparos em quadros de distribuição elétrica, com avaliação de disjuntores, conexões e circuitos.',
     },
     {
       image: '/images/servico-fiacao.png',
       icon: Zap,
-      title: 'Fiação e Instalações Elétricas',
+      title: 'Instalação e Reparos na Fiação Elétrica',
       description:
-        'Serviços de fiação, distribuição de circuitos e instalações elétricas residenciais conforme a necessidade do imóvel.',
+        'Instalação e manutenção de fiação elétrica residencial, correção de conexões e reparos em circuitos e pontos de energia.',
     },
     {
       image: '/images/servico-manutencao.png',
       icon: Wrench,
-      title: 'Manutenção e Reparos Elétricos',
+      title: 'Manutenção e Reparos Elétricos Residenciais',
       description:
-        'Identificação e reparo de problemas elétricos residenciais, como falhas, mau contato e circuitos com funcionamento irregular.',
+        'Diagnóstico e reparo de problemas elétricos em residências, como curto-circuito, mau contato, falhas na instalação e falta de energia.',
     },
   ]
 
@@ -78,12 +79,12 @@ const Services = () => {
         {/* Cabeçalho */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">
-            Serviços de Elétrica Residencial
+            Serviços de Elétrica Residencial em São José dos Campos
           </h2>
 
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Serviços de eletricista residencial em São José dos Campos para
-            instalações, manutenção, reparos e adequações elétricas.
+            Eletricista residencial para instalações, troca de componentes,
+            manutenção e reparos elétricos em toda São José dos Campos - SP.
           </p>
         </div>
 
@@ -146,7 +147,7 @@ const Services = () => {
           />
 
           <p className="text-sm text-gray-500 mt-4">
-            Precisa de um eletricista residencial?
+            Precisa de um eletricista residencial em São José dos Campos?
           </p>
         </div>
 
