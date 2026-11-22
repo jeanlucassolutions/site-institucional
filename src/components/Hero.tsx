@@ -56,9 +56,9 @@ const Hero = () => {
 
             {/* Título */}
             <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-              Instalações elétricas com{' '}
+              Instalações, Reparos e{' '}
               <span className="text-electric-500">
-                segurança e confiança
+                Manutenção Elétrica Residencial
               </span>
             </h1>
 
