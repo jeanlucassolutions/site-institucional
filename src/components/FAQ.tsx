@@ -2,7 +2,7 @@
 'use client'
 
 import { ChevronDown, HelpCircle } from 'lucide-react'
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import WhatsAppButton from './WhatsAppButton'
 
 const FAQ = () => {
@@ -12,61 +12,51 @@ const FAQ = () => {
       answer:
         'A Jean Lucas Eletricista realiza instalações, manutenção e reparos elétricos residenciais em São José dos Campos - SP. Entre os serviços estão instalação de tomadas, interruptores, chuveiros elétricos, luminárias, ventiladores de teto, disjuntores, manutenção de quadros elétricos e reparos na fiação.',
     },
-
     {
       question: 'Quanto custa um serviço de eletricista em São José dos Campos?',
       answer:
         'O valor depende do tipo de serviço, das condições da instalação elétrica e da complexidade do trabalho. Entre em contato pelo WhatsApp, explique o que precisa e solicite um orçamento antes de iniciar o serviço.',
     },
-
     {
       question: 'Como solicitar um orçamento de eletricista residencial?',
       answer:
         'Você pode solicitar seu orçamento diretamente pelo WhatsApp. Envie uma mensagem explicando o problema elétrico ou o serviço que deseja realizar. Se possível, envie fotos ou vídeos para facilitar a avaliação inicial.',
     },
-
     {
       question: 'Vocês fazem instalação de chuveiro elétrico?',
       answer:
         'Sim. Realizamos instalação e substituição de chuveiros elétricos residenciais. O serviço pode incluir a verificação da fiação, das conexões, do disjuntor e dos demais componentes necessários para uma instalação adequada.',
     },
-
     {
       question: 'Por que o disjuntor fica desarmando?',
       answer:
         'Um disjuntor pode desarmar por diferentes motivos, como sobrecarga no circuito, curto-circuito, problemas na fiação ou falha em algum equipamento. É importante identificar a causa do problema antes de tentar religar o disjuntor repetidamente.',
     },
-
     {
       question: 'Quando é necessário trocar ou fazer manutenção no quadro elétrico?',
       answer:
         'A necessidade de manutenção, substituição ou adequação do quadro elétrico depende das condições da instalação, do estado dos componentes e da distribuição dos circuitos. Uma avaliação pode identificar quais serviços são necessários.',
     },
-
     {
       question: 'Vocês fazem instalação de tomadas e interruptores?',
       answer:
         'Sim. Realizamos instalação e substituição de tomadas, interruptores e pontos de luz em residências. Também atendemos problemas como tomadas aquecendo, mau contato, faíscas e componentes danificados.',
     },
-
     {
       question: 'Vocês fazem manutenção e reparos elétricos residenciais?',
       answer:
         'Sim. Realizamos manutenção e reparos em instalações elétricas residenciais em São José dos Campos, incluindo problemas em tomadas, interruptores, iluminação, fiação, disjuntores e quadros elétricos.',
     },
-
     {
       question: 'Vocês instalam ventiladores de teto?',
       answer:
         'Sim. Realizamos instalação de ventiladores de teto em residências, verificando as condições do ponto elétrico e as conexões necessárias para a instalação.',
     },
-
     {
       question: 'Quais regiões vocês atendem em São José dos Campos?',
       answer:
         'A Jean Lucas Eletricista atende serviços de elétrica residencial em toda São José dos Campos - SP. Entre em contato pelo WhatsApp para informar seu endereço e consultar a disponibilidade do atendimento.',
     },
-
     {
       question: 'O serviço de elétrica residencial possui garantia?',
       answer:
@@ -75,9 +65,12 @@ const FAQ = () => {
   ]
 
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const faqId = useId()
 
   const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
+    setOpenIndex((currentIndex) =>
+      currentIndex === index ? null : index
+    )
   }
 
   return (
@@ -87,7 +80,7 @@ const FAQ = () => {
         {/* Cabeçalho */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 text-sm font-semibold text-electric-600 mb-4">
-            <HelpCircle size={18} />
+            <HelpCircle size={18} aria-hidden="true" />
             Dúvidas frequentes
           </div>
 
@@ -105,7 +98,8 @@ const FAQ = () => {
         <div className="max-w-3xl mx-auto space-y-3">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index
-            const answerId = `faq-answer-${index}`
+            const answerId = `${faqId}-answer-${index}`
+            const questionId = `${faqId}-question-${index}`
 
             return (
               <div
@@ -113,6 +107,7 @@ const FAQ = () => {
                 className="border border-gray-200 rounded-xl overflow-hidden bg-white hover:border-electric-500/50 transition-colors duration-300"
               >
                 <button
+                  id={questionId}
                   type="button"
                   onClick={() => toggleFAQ(index)}
                   className="w-full flex items-center justify-between gap-4 p-5 md:p-6 text-left hover:bg-gray-50 transition-colors"
@@ -135,6 +130,8 @@ const FAQ = () => {
                 {isOpen && (
                   <div
                     id={answerId}
+                    role="region"
+                    aria-labelledby={questionId}
                     className="px-5 md:px-6 pb-6"
                   >
                     <div className="border-t border-gray-100 pt-4">
