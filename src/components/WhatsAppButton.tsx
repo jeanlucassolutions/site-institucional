@@ -23,12 +23,16 @@ const WhatsAppButton = ({
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`
   const isCTA = variant === 'cta'
 
+  const handleClick = () => {
+    trackWhatsAppClick()
+  }
+
   return (
     <a
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={trackWhatsAppClick}
+      onClick={handleClick}
       aria-label="Solicitar orçamento de serviços elétricos pelo WhatsApp"
       title="Solicite seu orçamento pelo WhatsApp"
       className={
