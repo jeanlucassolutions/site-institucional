@@ -1,3 +1,4 @@
+
 'use client'
 
 import { ArrowRight, MessageCircle, Zap } from 'lucide-react'
@@ -22,13 +23,15 @@ const FinalCTA = () => {
 
             {/* Heading */}
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Precisa de um eletricista residencial?
+              Precisa de um Eletricista Residencial em São José dos Campos?
             </h2>
 
             {/* Description */}
             <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
-              Entre em contato pelo WhatsApp, explique o que você precisa
-              e solicite seu orçamento.
+              Conte com serviços de instalações, manutenção e reparos
+              elétricos residenciais. Entre em contato com Jean Lucas
+              Eletricista, explique sua necessidade e solicite um orçamento
+              pelo WhatsApp.
             </p>
 
             {/* CTA */}
@@ -51,7 +54,7 @@ const FinalCTA = () => {
 
               <div className="flex items-center gap-2">
                 <ArrowRight size={17} className="text-electric-500" />
-                São José dos Campos
+                São José dos Campos - SP
               </div>
 
             </div>
