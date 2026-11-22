@@ -17,7 +17,7 @@ const WhatsAppButton = ({
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5512982798846'
 
   const message = encodeURIComponent(
-    'Olá! Gostaria de solicitar um orçamento para serviços elétricos residenciais.'
+    'Olá, Jean! Gostaria de solicitar um orçamento para instalação, manutenção ou reparo elétrico residencial em São José dos Campos.'
   )
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`
@@ -29,7 +29,8 @@ const WhatsAppButton = ({
       target="_blank"
       rel="noopener noreferrer"
       onClick={trackWhatsAppClick}
-      aria-label="Solicitar orçamento pelo WhatsApp"
+      aria-label="Solicitar orçamento de serviços elétricos pelo WhatsApp"
+      title="Solicite seu orçamento pelo WhatsApp"
       className={
         isCTA
           ? 'inline-flex items-center justify-center gap-2 bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-sm'
