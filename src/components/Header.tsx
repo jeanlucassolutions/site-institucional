@@ -20,6 +20,12 @@ const Header = () => {
     { label: 'Contato', href: '#contato' },
   ]
 
+  const whatsappMessage = encodeURIComponent(
+    'Olá, Jean! Gostaria de solicitar um orçamento para serviços elétricos residenciais em São José dos Campos.'
+  )
+
+  const whatsappLink = `https://wa.me/5512982798846?text=${whatsappMessage}`
+
   const closeMenu = () => setIsOpen(false)
 
   const handlePhoneClick = (
@@ -27,6 +33,7 @@ const Header = () => {
   ) => {
     event.preventDefault()
     trackPhoneClick(event.currentTarget.href)
+    closeMenu()
   }
 
   const handleWhatsAppClick = () => {
@@ -84,7 +91,7 @@ const Header = () => {
 
             {/* Orçamento */}
             <a
-              href="https://wa.me/5512982798846"
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleWhatsAppClick}
@@ -132,10 +139,7 @@ const Header = () => {
               {/* Ligar agora - Mobile */}
               <a
                 href="tel:+5512982798846"
-                onClick={(event) => {
-                  closeMenu()
-                  handlePhoneClick(event)
-                }}
+                onClick={handlePhoneClick}
                 className="mt-2 flex items-center justify-center gap-2 border-2 border-electric-500 text-electric-600 hover:bg-electric-500 hover:text-navy-900 font-semibold px-5 py-3 rounded-lg transition-all"
                 aria-label="Ligar para Jean Lucas Eletricista"
               >
@@ -145,7 +149,7 @@ const Header = () => {
 
               {/* WhatsApp - Mobile */}
               <a
-                href="https://wa.me/5512982798846"
+                href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleWhatsAppClick}
