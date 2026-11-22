@@ -1,3 +1,4 @@
+
 'use client'
 
 import {
@@ -17,48 +18,48 @@ const Problems = () => {
   const problems = [
     {
       icon: AlertCircle,
-      label: 'Tomada com problema',
-      message: 'Olá, Jean! Estou com um problema em uma tomada e gostaria de solicitar um orçamento.',
+      label: 'Tomada esquentando ou sem funcionar',
+      message: 'Olá, Jean! Estou com uma tomada esquentando ou sem funcionar e gostaria de solicitar uma avaliação.',
     },
     {
       icon: Zap,
-      label: 'Interruptor com problema',
-      message: 'Olá, Jean! Estou com um problema em um interruptor e gostaria de solicitar um orçamento.',
+      label: 'Interruptor com defeito',
+      message: 'Olá, Jean! Estou com um problema em um interruptor da minha residência e gostaria de solicitar um orçamento.',
     },
     {
       icon: Lightbulb,
-      label: 'Chuveiro elétrico',
-      message: 'Olá, Jean! Estou com um problema no chuveiro elétrico e gostaria de solicitar um orçamento.',
+      label: 'Chuveiro elétrico com problema',
+      message: 'Olá, Jean! Estou com um problema no chuveiro elétrico e gostaria de solicitar uma avaliação.',
     },
     {
       icon: ShieldAlert,
       label: 'Disjuntor desarmando',
-      message: 'Olá, Jean! Meu disjuntor está desarmando e gostaria de solicitar uma avaliação.',
+      message: 'Olá, Jean! Meu disjuntor está desarmando frequentemente e gostaria de solicitar uma avaliação.',
     },
     {
       icon: Lightbulb,
-      label: 'Problema de iluminação',
-      message: 'Olá, Jean! Estou com um problema na iluminação da minha residência e gostaria de solicitar um orçamento.',
+      label: 'Lâmpadas piscando ou sem energia',
+      message: 'Olá, Jean! Estou com problemas na iluminação da minha residência e gostaria de solicitar um orçamento.',
     },
     {
       icon: Wind,
-      label: 'Ventilador de teto',
-      message: 'Olá, Jean! Preciso de ajuda com a instalação ou manutenção de um ventilador de teto.',
+      label: 'Instalação de ventilador',
+      message: 'Olá, Jean! Preciso instalar ou realizar manutenção em um ventilador de teto.',
     },
     {
       icon: Wrench,
-      label: 'Problema na fiação',
+      label: 'Problema na fiação elétrica',
       message: 'Olá, Jean! Estou com um problema na fiação elétrica da minha residência e gostaria de solicitar uma avaliação.',
     },
     {
       icon: Box,
-      label: 'Quadro elétrico',
-      message: 'Olá, Jean! Preciso de ajuda com o quadro elétrico da minha residência.',
+      label: 'Problema no quadro elétrico',
+      message: 'Olá, Jean! Estou com um problema no quadro elétrico da minha residência e gostaria de solicitar uma avaliação.',
     },
     {
       icon: Zap,
-      label: 'Manutenção elétrica',
-      message: 'Olá, Jean! Preciso de uma manutenção elétrica em minha residência e gostaria de solicitar um orçamento.',
+      label: 'Curto-circuito ou falta de energia',
+      message: 'Olá, Jean! Estou com um possível curto-circuito ou falta de energia na minha residência e preciso de ajuda.',
     },
   ]
 
@@ -84,8 +85,8 @@ const Problems = () => {
           </h2>
 
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Escolha uma das opções abaixo ou fale diretamente comigo pelo
-            WhatsApp. Vou entender o problema e orientar você.
+            Problemas com tomadas, chuveiro, disjuntores, fiação ou falta de
+            energia? Selecione uma opção e solicite seu orçamento pelo WhatsApp.
           </p>
         </div>
 
@@ -123,7 +124,7 @@ const Problems = () => {
           <WhatsAppButton variant="cta" />
 
           <p className="text-sm text-gray-500 mt-4">
-            Falar com o eletricista
+            Solicite seu orçamento com Jean Lucas Eletricista em São José dos Campos.
           </p>
         </div>
 
