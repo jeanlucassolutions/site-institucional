@@ -1,3 +1,4 @@
+
 'use client'
 
 import {
@@ -17,7 +18,7 @@ const Contact = () => {
   const whatsappNumber = '5512982798846'
 
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    'Olá! Gostaria de solicitar um orçamento para serviços elétricos residenciais.'
+    'Olá! Gostaria de solicitar um orçamento para serviços de elétrica residencial em São José dos Campos.'
   )}`
 
   const handlePhoneClick = (
@@ -39,11 +40,13 @@ const Contact = () => {
             </span>
 
             <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">
-              Solicite seu orçamento
+              Solicite seu Orçamento com um Eletricista em São José dos Campos
             </h2>
 
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Precisa de um eletricista? Escolha a melhor forma de entrar em contato.
+              Precisa de instalação, manutenção ou reparo elétrico
+              residencial? Entre em contato com Jean Lucas Eletricista
+              e solicite seu orçamento.
             </p>
           </div>
 
@@ -66,11 +69,12 @@ const Contact = () => {
               </h3>
 
               <p className="text-gray-600 text-sm mb-3">
-                Envie uma mensagem e solicite seu orçamento.
+                Envie uma mensagem, explique o que precisa e solicite
+                seu orçamento diretamente pelo WhatsApp.
               </p>
 
               <span className="text-electric-600 font-semibold text-sm">
-                Conversar pelo WhatsApp →
+                Solicitar orçamento pelo WhatsApp →
               </span>
             </a>
 
@@ -89,7 +93,8 @@ const Contact = () => {
               </h3>
 
               <p className="text-gray-600 text-sm mb-3">
-                Ligue diretamente para conversar sobre o serviço.
+                Ligue para conversar sobre instalações, manutenção
+                ou reparos elétricos na sua residência.
               </p>
 
               <span className="text-electric-600 font-semibold text-sm">
@@ -111,7 +116,8 @@ const Contact = () => {
               </h3>
 
               <p className="text-gray-600 text-sm mb-3">
-                Envie sua solicitação por e-mail.
+                Prefere entrar em contato por e-mail?
+                Envie sua solicitação.
               </p>
 
               <span className="text-electric-600 font-semibold text-sm break-all">
@@ -135,7 +141,8 @@ const Contact = () => {
               </h3>
 
               <p className="text-gray-600 text-sm mb-3">
-                Acompanhe nossos serviços e conteúdos.
+                Conheça os serviços realizados e acompanhe
+                nossos conteúdos sobre elétrica residencial.
               </p>
 
               <span className="text-electric-600 font-semibold text-sm">
@@ -150,11 +157,12 @@ const Contact = () => {
             <MapPin size={26} className="text-electric-600 mx-auto mb-3" />
 
             <h3 className="text-lg font-bold text-navy-800 mb-2">
-              Atendimento em São José dos Campos - SP
+              Eletricista Residencial em São José dos Campos - SP
             </h3>
 
             <p className="text-gray-600 text-sm">
-              Serviços elétricos residenciais em toda a cidade.
+              Atendimento para instalações, manutenção e reparos
+              elétricos residenciais em toda a cidade.
             </p>
           </div>
 
