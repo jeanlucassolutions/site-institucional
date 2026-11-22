@@ -20,9 +20,11 @@ const Hero = () => {
   const whatsappNumber =
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5512982798846'
 
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    'Olá, Jean Lucas! Gostaria de solicitar um orçamento de serviço elétrico.'
-  )}`
+  const whatsappMessage = encodeURIComponent(
+    'Olá, Jean! Gostaria de solicitar um orçamento para serviços elétricos residenciais em São José dos Campos.'
+  )
+
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`
 
   const handleWhatsAppClick = () => {
     trackWhatsAppClick()
@@ -81,6 +83,7 @@ const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleWhatsAppClick}
+                aria-label="Solicitar orçamento pelo WhatsApp"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-4 font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-green-500"
               >
                 <MessageCircle size={20} />
@@ -91,6 +94,7 @@ const Hero = () => {
               <a
                 href="tel:+5512982798846"
                 onClick={handlePhoneClick}
+                aria-label="Ligar para Jean Lucas Eletricista"
                 className="inline-flex flex-col items-center justify-center gap-1 rounded-xl border-2 border-red-500 bg-red-600 px-6 py-3 font-bold text-white shadow-lg shadow-red-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-red-700 sm:min-w-[220px]"
               >
                 <span className="flex items-center gap-2">
