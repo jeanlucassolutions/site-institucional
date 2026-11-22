@@ -1,3 +1,4 @@
+
 'use client'
 
 import Image from 'next/image'
@@ -43,10 +44,11 @@ const Header = () => {
             href="#inicio"
             className="flex items-center"
             onClick={closeMenu}
+            aria-label="Jean Lucas Eletricista - Página inicial"
           >
             <Image
               src="/images/logo-jean-lucas-eletricista.png"
-              alt="Jean Lucas Eletricista Residencial"
+              alt="Jean Lucas Eletricista Residencial em São José dos Campos"
               width={180}
               height={60}
               priority
@@ -55,7 +57,10 @@ const Header = () => {
           </a>
 
           {/* Menu Desktop */}
-          <nav className="hidden md:flex items-center gap-5">
+          <nav
+            className="hidden md:flex items-center gap-5"
+            aria-label="Navegação principal"
+          >
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -71,6 +76,7 @@ const Header = () => {
               href="tel:+5512982798846"
               onClick={handlePhoneClick}
               className="flex items-center gap-2 border-2 border-electric-500 text-electric-600 hover:bg-electric-500 hover:text-navy-900 font-semibold px-4 py-2.5 rounded-lg transition-all duration-300"
+              aria-label="Ligar para Jean Lucas Eletricista"
             >
               <Phone size={18} />
               Ligar agora
@@ -83,6 +89,7 @@ const Header = () => {
               rel="noopener noreferrer"
               onClick={handleWhatsAppClick}
               className="flex items-center gap-2 bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-5 py-2.5 rounded-lg transition-all duration-300 shadow-sm"
+              aria-label="Solicitar orçamento pelo WhatsApp"
             >
               <MessageCircle size={18} />
               Orçamento
@@ -96,6 +103,7 @@ const Header = () => {
             className="md:hidden p-2 text-gray-700 hover:text-electric-600 transition-colors"
             aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -103,7 +111,11 @@ const Header = () => {
 
         {/* Menu Mobile */}
         {isOpen && (
-          <nav className="md:hidden border-t border-gray-100 py-4">
+          <nav
+            id="mobile-navigation"
+            className="md:hidden border-t border-gray-100 py-4"
+            aria-label="Navegação mobile"
+          >
             <div className="flex flex-col gap-1">
 
               {navItems.map((item) => (
@@ -125,6 +137,7 @@ const Header = () => {
                   handlePhoneClick(event)
                 }}
                 className="mt-2 flex items-center justify-center gap-2 border-2 border-electric-500 text-electric-600 hover:bg-electric-500 hover:text-navy-900 font-semibold px-5 py-3 rounded-lg transition-all"
+                aria-label="Ligar para Jean Lucas Eletricista"
               >
                 <Phone size={20} />
                 Ligar agora
@@ -137,6 +150,7 @@ const Header = () => {
                 rel="noopener noreferrer"
                 onClick={handleWhatsAppClick}
                 className="mt-2 flex items-center justify-center gap-2 bg-electric-500 hover:bg-electric-600 text-navy-900 font-semibold px-5 py-3 rounded-lg text-center transition-all"
+                aria-label="Solicitar orçamento pelo WhatsApp"
               >
                 <MessageCircle size={20} />
                 Solicitar orçamento
