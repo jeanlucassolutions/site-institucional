@@ -106,6 +106,7 @@ const Services = () => {
                     alt={`${service.title} residencial em São José dos Campos`}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    loading="lazy"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
 
