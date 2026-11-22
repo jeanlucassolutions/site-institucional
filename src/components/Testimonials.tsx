@@ -1,7 +1,7 @@
 
 'use client'
 
-import { Star, MapPin, ExternalLink } from 'lucide-react'
+import { MapPin, ExternalLink } from 'lucide-react'
 import WhatsAppButton from './WhatsAppButton'
 
 const Testimonials = () => {
@@ -15,7 +15,7 @@ const Testimonials = () => {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 text-sm font-semibold text-electric-600 mb-4">
-            <Star size={18} aria-hidden="true" />
+            <MapPin size={18} aria-hidden="true" />
             Avaliações no Google
           </div>
 
@@ -33,20 +33,6 @@ const Testimonials = () => {
         {/* Google Review Card */}
         <div className="max-w-3xl mx-auto">
           <div className="bg-white border border-gray-200 rounded-2xl p-8 md:p-10 shadow-sm text-center">
-
-            {/* Stars - elemento visual */}
-            <div
-              className="flex justify-center gap-1 mb-5"
-              aria-hidden="true"
-            >
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star
-                  key={star}
-                  size={24}
-                  className="text-electric-500 fill-electric-500"
-                />
-              ))}
-            </div>
 
             {/* Google */}
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 mb-5">
